@@ -1,0 +1,295 @@
+*{
+  box-sizing: border-box;
+}
+.card-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1.5rem;
+}
+.border-bt{
+  border-bottom: 1px solid #e6e6e6;
+}
+/* .card {
+  flex: 0 1 calc(25% - 1rem);
+  max-width: calc(25% - 1rem);
+} */
+.btn_class_view{
+  cursor: pointer;
+  transition: .3s;
+}
+.card-shadow{
+  transition: .3s;
+}
+.btn_class_view:hover, .card-shadow:hover{
+  box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px !important;
+}
+.button input.apply {color:#fff; border-style:none; background-color:#497abf;}
+
+.iziModal-header-title {font-weight: bold;}
+.btn-default-bg-color{
+  background-color: #6899c4;
+}
+
+.addit-back{
+  display: inline-block;
+  right: 0;
+  top: -40px;
+  width: 38px;
+  height: 30px;
+  font-size: 0;
+  line-height: 0;
+  color: #fff;
+  border-style: none;
+  background: #aaa url(../images/ic_back.png) no-repeat center center;
+  background-size: 18px 14px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+.offcanvas{
+  width: 40% !important;
+}
+.iziModal{
+  z-index: 99999 !important;
+}
+.display-none{
+  display: none;
+}
+#greenAlerts{
+  z-index: 99999999;
+}
+.ColVis_Button.ColVis_MasterButton{
+  border: none;
+  padding: 6px 10px;
+  background: #6899c4;
+  color: #fff !important;
+  font-size: 12px;
+}
+div.dt-buttons{
+  margin-left: 7px;
+  margin-right: 7px;
+}
+.dt-button.buttons-copy.buttons-html5{
+  border: none;
+  padding: 7px 10px;
+  background: #5c5d5e;
+  color: #fff !important;
+  font-size: 12px;
+}
+.dt-button.buttons-copy.buttons-html5:hover{
+  border: none;
+  padding: 7px 10px;
+  background: #5c5d5e !important;
+  color: #fff !important;
+  font-size: 12px;
+}
+.dt-button.buttons-excel.buttons-html5{
+  border: none;
+  padding: 7px 10px;
+  background: #0f7d01;
+  color: #fff !important;
+  font-size: 12px;
+}
+.dt-button.buttons-excel.buttons-html5:hover{
+  border: none;
+  padding: 7px 10px;
+  background: #0f7d01 !important;
+  color: #fff !important;
+  font-size: 12px;
+}
+.basic-btn-2[disabled] {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+.form-check-input{
+  margin-top: 0;
+  vertical-align: middle;
+}
+.custom-head{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 3px solid #e2e2e2;
+  border-radius: 50px;
+}
+.cus-i{
+  font-size: 18px;
+}
+.avatar-indicators:before{
+  display: none;
+}
+.text-sm{
+  font-size: 12px !important;
+}
+.dataTables_length{
+  font-size: 12px;
+}
+.dataTables_filter{
+  font-size: 12px;
+  display: flex;
+  align-items: center;
+  gap: 1px;
+}
+table{
+  font-size: 12px;
+}
+.form-check .form-check-addit{
+  float: none;
+  margin-left: 0;
+  margin-top: 0;
+}
+.addit-form-check-div{
+  padding-left: 0;
+  margin-right: 5px;
+}
+.offcanvas-header{
+  border-bottom: 1px solid #dadada;
+  margin-bottom: 10px;
+}
+table.dataTable td {
+  white-space: nowrap; /* 줄 바꿈을 방지하고 텍스트가 가로로 계속 표시되도록 함 */
+  overflow: hidden; /* 텍스트가 셀을 넘어가면 숨김 */
+  text-overflow: ellipsis; /* 넘치는 텍스트는 "..."으로 생략 */
+  max-width: 300px;
+}
+.display-none{
+  display: none;
+}
+.addit-header-cus{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.addit-header-cus2{
+  padding: 15px 0;
+}
+.gnb{
+  text-align: right;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+.back-btn{
+  text-align: right;
+}
+.w-1270{
+  width: 1270px;
+}
+.step2-table{
+  width: 100%;
+}
+.step2-table th{
+ background-color: #e3e3e3;
+ text-align: center;
+ padding: 7px 0;
+ font-size: 16px;
+ border: 1px solid #e3e3e3;
+}
+.step2-table td{
+ padding: 9px;
+ font-size: 16px;
+ border: 1px solid #e3e3e3;
+}
+.copy-light{
+  display: block;
+  width: 100%;
+  text-align: center;
+}
+@media (max-width: 1270px){
+  .w-1270{
+    width: 100%;
+    padding-left: 15px !important;
+    padding-right: 15px !important;
+  }
+}
+@media (max-width: 1200px){
+  .header{
+    padding: 30px 0;
+    border-bottom: 1px solid #e4e4e4;
+    margin-bottom: 30px;
+  }
+  .header h1{
+    padding: 0;
+  }
+  .addit-header-cus2{
+    padding: 0;
+  }
+  .modal-content{
+    width: 60%;
+  }
+}
+
+@media screen and (max-width:980px) {
+  .web-view{
+    display: none;
+  }
+  .modal-content{
+    width: 80%;
+  }
+}
+@media screen and (max-width:600px) {
+  .header{
+    border-bottom: 1px solid #e4e4e4;
+  }
+  .header h1 img{
+    height: auto;
+    width: 120px;
+  }
+  .addit-header-cus{
+    position: relative;
+    display: block;
+  }
+  .gnb{
+    position: absolute;
+    top: 50%;
+    right: 15px;
+    transform: translateY(-50%);
+  }
+  .header h1{
+    margin: 0 auto;
+    width: fit-content;
+  }
+  .course-view .course-info{
+    padding-left: 0;
+  }
+  .course-view .course-info img{
+    position: unset;
+    width: 100%;
+    height: auto;
+    margin-bottom: 20px;
+  }
+  .step2-table-div{
+    width: 100%;
+    overflow-x: scroll;
+  }
+  .step2-table{
+    width: max-content;
+  }
+  .class-list{
+    font-size: 0.9rem;
+  }
+  .modal-content{
+    width: 100%;
+  }
+}
+
+.additlist li{
+  list-style: disc;
+  margin-left: 20px;
+}
+
+.additlist1 li{
+  color: red;
+  padding-left: 10px;
+  margin-left: 10px;
+  font-weight: bold;
+}
+
+.additlist1 li::marker{
+  content : "※";
+
+}
+
+.status-modal.iziModal{
+  z-index: 999999 !important;
+}

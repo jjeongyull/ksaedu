@@ -1,0 +1,32 @@
+
+<input type="hidden" id="class_idx">
+<div class="mb-5" id="class_time_area">
+</div>
+
+<h2 class="text-lg font-bold">시간추가</h2>
+<div class="mb-2">
+  <div class="flex items-center gap-2 class_time_div mt-2" id='class_time_div_${pData[i].idx}'>
+    <select class="form-select time_sel w-24" id="class_lang">
+      <option value="ch">중문</option>
+      <option value="en" selected>영문</option>
+    </select>
+    <input type="text" class="form-control w-24" id='class_sdate' placeholder='시작날짜' readonly>
+    ~
+    <input type="text" class="form-control w-24" id='class_edate' placeholder='종료날짜' readonly>
+    /
+    <input type="text" class="form-control w-24" id="class_max_count" onkeyup="onlyNumberValue(this)" maxlength="10" placeholder='최대 인원수'>
+    /
+    <input type="text" class="form-control" id="class_place" maxlength="300" placeholder='교육장소'>
+    <div class="w-full flex gap-2">    
+      <label class="form-check-label text-sm" for="chk_class_type_0">
+        <input id="chk_class_type_0" type="radio" name="chk_class_type" class="form-check-input" value="0">  
+        대면
+      </label>
+      <label class="form-check-label  text-sm" for="chk_class_type_1">
+        <input id="chk_class_type_1" type="radio" name="chk_class_type" class="form-check-input" value="1">  
+        비대면
+      </label>
+    </div>
+    <button class="text-sm basic-btn-2 btn-default-bg-color w-60 text-sm text-white py-1.5 px-2" id="btn_insert_time">추가</button>
+  </div>
+</div>

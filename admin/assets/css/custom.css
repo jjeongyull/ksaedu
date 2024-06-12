@@ -1,0 +1,58 @@
+.login-logo{
+  width : 200px;
+}
+
+.iziModal .iziModal-header.iziModal-noSubtitle{
+  height: auto;
+  padding: 15px 15px 15px 15px;
+}
+
+.view-loading{
+  display: flex;  
+  position: absolute; 
+  background-color: rgb(172, 171, 173); 
+  left: 0;
+  top : 0;
+  opacity: 0.4; 
+  width: 100%; 
+  height: 100%;
+}
+
+.hidden{
+  display: none;
+}
+
+.form-control{
+  padding:.3rem 1rem;
+}
+
+.form-select{
+  padding:.3rem 1rem;
+}
+
+/* jstree 노드가 크기를 벗어날 경우 말줄임으로 나타내기 */
+.jstree a {
+  /*display: block;*/
+  max-width: 100%; /* Adjust the maximum width as needed */
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis; /* Adds an ellipsis (...) when text overflows */
+}
+
+.jstree-container-ul{
+  background-color: aliceblue;
+}
+
+/* greenAlert 모달 화면 중앙 정렬 */
+.modal-dialog {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: calc(100% - 1.75rem);
+  margin: auto;
+}
+
+.modal-content {
+  width: 100%;
+  max-width: 800px; /* 원하는 최대 너비 설정 */
+}

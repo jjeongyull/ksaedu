@@ -1,0 +1,8 @@
+/* datatable input기본 마진 제거 */
+/* 
+  datatable검색 - input창 datapicker사용시 기본 margin-left때문에
+  간격이 벌어지는걸 막는 용도
+*/
+.dataTables_wrapper .dataTables_filter input{
+  margin-left: 0;
+}

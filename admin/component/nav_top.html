@@ -1,0 +1,39 @@
+<!-- Content Header-->
+<nav class="navbar-classic navbar navbar-expand-lg">
+  <!-- 메뉴 토글 버튼 클릭 아이디 -->
+  <a id="nav_toggle" class="nav-toggle" href="#">
+    <i data-feather="menu" class="nav-icon me-2 icon-xs">
+    </i>
+  </a>
+  <!--Navbar nav -->
+  <ul class="navbar-nav navbar-right-wrap ms-auto d-flex nav-top-wrap">
+    <!-- List -->
+    <li class="dropdown ms-2">
+      <a class="rounded-circle" href="#" role="button" id="dropdownUser" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+        <div class="avatar avatar-md avatar-indicators avatar-online custom-head">
+          <i class="far fa-user cus-i"></i>
+        </div>
+      </a>
+      <div class="dropdown-menu dropdown-menu-end" aria-labelledby="dropdownUser">
+        <div class="px-4 pb-0 pt-2">
+          <div class="lh-1 ">
+            <h5 id="user_name"></h5>
+          </div>
+          <div class=" dropdown-divider mt-3 mb-2"></div>
+        </div>
+        <ul class="list-unstyled">
+          <li>
+            <a class="dropdown-item" href="javascript:void(0);" id="btn_change_pw_popup">
+              <i class="me-2 icon-xxs dropdown-item-icon" data-feather="user"></i>비밀번호 변경
+            </a>
+          </li>
+          <li>
+            <a class="dropdown-item" href="javascript:void(0);" id="btn_logout">
+              <i class="me-2 icon-xxs dropdown-item-icon" data-feather="power"></i>로그 아웃
+            </a>
+          </li>
+        </ul>
+      </div>
+    </li>
+  </ul>
+</nav>

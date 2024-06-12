@@ -1,0 +1,330 @@
+<html lang="ko">
+  <head>
+    <meta charset="utf-8">
+    <meta name="format-detection" content="telephone=no, address=no, email=no">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta http-equiv="Cache-Control" content="no-cache">
+    <meta http-equiv="Expires" content="0">
+    <meta http-equiv="Pragma" content="no-cache">
+    <title>KSA EDU</title>
+
+    <link rel="apple-touch-icon" sizes="57x57" href="favicon/apple-icon-57x57.png">
+    <link rel="apple-touch-icon" sizes="60x60" href="favicon/apple-icon-60x60.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="favicon/apple-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="favicon/apple-icon-76x76.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="favicon/apple-icon-114x114.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="favicon/apple-icon-120x120.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="favicon/apple-icon-144x144.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="favicon/apple-icon-152x152.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="favicon/apple-icon-180x180.png">
+    <link rel="icon" type="image/png" sizes="192x192"  href="favicon/android-icon-192x192.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="96x96" href="favicon/favicon-96x96.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="favicon/favicon-16x16.png">
+    <link rel="manifest" href="favicon/manifest.json">
+    <meta name="msapplication-TileColor" content="#ffffff">
+    <meta name="msapplication-TileImage" content="favicon/ms-icon-144x144.png">
+    <meta name="theme-color" content="#ffffff">
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&amp;display=swap" rel="stylesheet">
+
+    <!-- Libs CSS -->
+    <link href="assets/libs/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
+    <link href="assets/libs/dropzone/dist/dropzone.css"  rel="stylesheet">
+    <link href="assets/libs/@mdi/font/css/materialdesignicons.min.css" rel="stylesheet" />
+    <link href="assets/libs/prismjs/themes/prism-okaidia.min.css" rel="stylesheet">
+
+    <!-- Theme CSS -->
+    <link rel="stylesheet" href="assets/css/theme.css">
+
+    <!-- 수정 테마 : 버튼 -->
+    <link rel="stylesheet" href="assets/css/button.css">
+
+    <link rel="stylesheet" type="text/css" href="css/edu.css?ver=nLlwOdnMgz1708089502753">
+    <link rel="stylesheet" type="text/css" href="css/edu.main.css?ver=wmdzWDEi0p1708089502738">
+    <link rel="stylesheet" type="text/css" href="css/addit.css?ver=20240216">
+
+    <script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
+
+    <!-- izmodal-->
+    <script src="lib/izimodal/1.6.1/iziModal.js"></script>
+    <link href="lib/izimodal/1.6.1/iziModal.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/icomoon.css">
+
+    <script src="js/lang.js"></script>
+    <script src="js/util.js"></script>
+    <script src="js/const.js"></script>
+    <script src="js/common.js"></script>
+    <script src="js/ck_event.js"></script>
+    <script src="js/draw_event.js"></script>
+    <script src="js/api.js"></script>
+    <script src="js/api_call.js"></script>
+
+    <style>
+      ::placeholder {
+        font-size: 13px;
+      }
+      input:-ms-input-placeholder {
+        font-size: 13px;
+      }
+    </style>
+
+    <!-- <script src="https://kit.fontawesome.com/4834298440.js" crossorigin="anonymous"></script> -->
+</head>
+<body id="edu">
+	<div id="wrap">
+		<div class="header" id="div_header">
+		</div>
+
+		<div class="center">
+      <div class="course-area text-center">
+          <div class="container max-w-5xl mx-auto">
+            <h2 class="text-center text-xl md:text-4xl font-bold mb-3" style="color: #555; font-family: 'NotoSansKR';" id="apply_class_title"><strong>KS 해외사업장 교육 신청</strong></h2>
+            <div class="back-btn">
+              <input type="button" value="뒤로가기" onclick="history.back();" class="before">
+            </div>
+            <h2 id="label_class_name" class="text-left text-lg font-bold"><strong>교육과정명 : </strong></h2>
+            <h2 id="label_class_time" class="text-left text-lg mb-1 font-bold"><strong>교육일정 : </strong></h2>   
+          </div>     
+            <div class="screen">
+              <div class="container max-w-5xl mx-auto mb-2">
+                <!-- hidden value-->
+                <input type="hidden" id="class_time">
+                <input type="hidden" id="class_idx">
+                <input type="hidden" id="class_country">
+                <!-- 중문이름 -->
+                <div class="block text-left md:flex md:items-center md:gap-2 bg-gray-100 px-3 py-2 border-bt ch_view">
+                  <span class="text-red-600 font-bold">*</span><label for="subs_user_name_ch" class="inline-block md:block md:w-1/5 text-left" id="label_username_ch">이름(중문)</label>
+                  <input id="subs_user_name_ch" type="text" maxlength="50" class="form-control md:w-4/5" placeholder="중문 이름을 입력하세요.">  
+                </div>
+
+                 <!-- 영문이름 -->
+                 <div class="block text-left md:flex md:items-center md:gap-2 bg-gray-100 px-3 py-2 border-bt">
+                  <span class="text-red-600 font-bold">*</span><label for="subs_user_name_en" class="inline-block md:block md:w-1/5 text-left" id="label_username_en">이름(영문)</label>
+                  <input id="subs_user_name_en" type="text" maxlength="50" class="form-control md:w-4/5" placeholder="영문 이름을 입력하세요.">  
+                </div>
+
+                <!-- 직위 -->
+                 <div class="block text-left md:flex md:items-center md:gap-2 bg-gray-100 px-3 py-2 border-bt">
+                  <span class="text-red-600 font-bold">*</span><label for="subs_company_position" class="inline-block md:block md:w-1/5 text-left" id="label_company_position">직위</label>
+                  <input id="subs_company_position" type="text" maxlength="50" class="form-control md:w-4/5" placeholder="직위를 입력하세요.">  
+                </div>
+
+                <!-- 성별 -->
+                <div class="block text-left md:flex md:items-center md:gap-2 bg-gray-100 px-3 py-2 border-bt">
+                  <span class="text-red-600 font-bold">*</span><div class="inline-block md:block md:w-1/5 text-left" id="label_chk_sex">성별</div>
+                  <div class="w-full md:w-4/5 flex gap-3">
+                    <div class="form-check">
+                      <input class="form-check-input edu-form" type="radio" name="chk_sex" id="men" value="0">
+                      <label class="form-check-label" for="men" id="label_men">
+                        남
+                      </label>
+                    </div>
+                    <div class="form-check">
+                      <input class="form-check-input edu-form" type="radio" name="chk_sex" id="girl" value="1">
+                      <label class="form-check-label" for="girl" id="label_gril">
+                        녀
+                      </label>
+                    </div>
+
+           
+                    <!-- <label class="form-check-label" for="men">
+                      <input id="men" type="radio" name="chk_sex" class="form-check-input" value="0">  
+                      MEN
+                    </label>
+                    <label class="form-check-label" for="gril" id="label_gril">
+                      <input id="gril" type="radio" name="chk_sex" class="form-check-input" value="1"> 
+                      GRIL 
+                    </label> -->
+                  </div>
+                </div>
+
+                <!-- 생년월일 -->
+                <div class="block text-left md:flex md:items-center md:gap-2 bg-gray-100 px-3 py-2 border-bt">
+                  <span class="text-red-600 font-bold">*</span><label for="subs_birth" id="label_birth" class="inline-block md:block md:w-1/5 text-left">생년월일</label>
+                  <input id="subs_birth" maxlength="10" type="text" class="form-control md:w-4/5" placeholder="생년월일을 입력하세요." oninput="onlyNumberValue(this)">  
+                </div>
+
+                <!-- 신분번호(주민등록번호) -->
+                <div class="block text-left md:flex md:items-center md:gap-2 bg-gray-100 px-3 py-2 border-bt">
+                  <span class="text-red-600 font-bold">*</span><label for="subs_identity_number" id="label_identity_number" class="inline-block md:block md:w-1/5 text-left">신분번호</label>
+                  <input id="subs_identity_number" maxlength="40" type="text" class="form-control md:w-4/5" placeholder="신분번호를 입력하세요.('-'뺴고)">  
+                </div>
+                <div class="block text-left md:flex md:items-center md:gap-2 bg-gray-100 px-3 py-2 border-bt display-none" id="class_2_view">
+                  <span class="text-red-600 font-bold opacity-0">*</span><p for="subs_identity_number" class="inline-block md:block md:w-1/5 text-left"></p>
+                  <p maxlength="40" type="text" class="md:w-4/5" >Please send a copy of your ID and photos for certification to ksedu1@ksa.or.kr.<br> Mail Subject: Company Name-Name</p>
+                </div>
+
+                <!-- 연락처 -->
+                <div class="block text-left md:flex md:items-center md:gap-2 bg-gray-100 px-3 py-2 border-bt">
+                  <span class="text-red-600 font-bold">*</span><label for="subs_phone_number" class="inline-block md:block md:w-1/5 text-left" id="label_phone_number">연락처</label>
+                  <input id="subs_phone_number" type="text" maxlength="20" class="form-control md:w-4/5 phoneNumber" placeholder="연락처를 입력하세요.('-'뺴고)" oninput="onlyNumberValue(this)">  
+                </div>
+
+                <!-- 수강생 위쳇 -->
+                <div class="block text-left md:flex md:items-center md:gap-2 bg-gray-100 px-3 py-2 border-bt ch_view">
+                  <span class="text-red-600 font-bold">*</span><label for="subs_user_wechat" class="inline-block md:block md:w-1/5 text-left" id="label_wechat">参加人员微信</label>
+                  <input id="subs_user_wechat" type="text" maxlength="100" class="form-control md:w-4/5" placeholder="请输入参会者微信">
+                </div>
+
+                <!-- 이메일 -->
+                <div class="block text-left md:flex md:items-center md:gap-2 bg-gray-100 px-3 py-2 border-bt">
+                  <span class="text-red-600 font-bold">*</span><label for="subs_user_email" class="inline-block md:block md:w-1/5 text-left" id="label_user_email">이메일</label>
+                  <input id="subs_user_email" type="text" maxlength="100" class="form-control md:w-4/5" placeholder="이메일을 입력하세요." onchange="validateEmail(this)">  
+                </div>
+
+                <!-- zipcode -->
+                <div class="block text-left md:flex md:items-center md:gap-2 bg-gray-100 px-3 py-2 border-bt display-none" id="subs_user_zipcode_div">
+                  <span class="text-red-600 font-bold">*</span><label for="subs_user_zipcode" class="inline-block md:block md:w-1/5 text-left" id="label_user_zipcode">ZIPCODE (EMS)</label>
+                  <input id="subs_user_zipcode" type="text" maxlength="100" class="form-control md:w-4/5" placeholder="Please enter ZIPCODE for textbook delivery.">  
+                </div>
+
+                <!-- 업체명(중문) -->
+                <div class="block text-left md:flex md:items-center md:gap-2 bg-gray-100 px-3 py-2 border-bt ch_view">
+                  <span class="text-red-600 font-bold">*</span><label for="subs_company_name_ch" class="inline-block md:block md:w-1/5 text-left" id="label_company_name_ch">업체명(중문)</label>
+                  <input id="subs_company_name_ch" type="text" maxlength="200" class="form-control md:w-4/5" placeholder="업체명(중문)을 입력하세요.">  
+                </div>
+
+                <!-- 업체명(영문) -->
+                <div class="block text-left md:flex md:items-center md:gap-2 bg-gray-100 px-3 py-2 border-bt">
+                  <span class="text-red-600 font-bold">*</span><label for="subs_company_name_en" class="inline-block md:block md:w-1/5 text-left" id="label_company_name_en">업체명(영문)</label>
+                  <input id="subs_company_name_en" type="text" maxlength="200" class="form-control md:w-4/5" placeholder="업체명(영문)을 입력하세요.">  
+                </div>
+
+                <!-- 업체명(국문) -->
+                <div class="block text-left md:flex md:items-center md:gap-2 bg-gray-100 px-3 py-2 border-bt">
+                  <span class="text-red-600 font-bold">*</span><label for="subs_company_name_ko" class="inline-block md:block md:w-1/5 text-left" id="label_company_name_ko">업체명(국문)</label>
+                  <input id="subs_company_name_ko" type="text" maxlength="200" class="form-control md:w-4/5" placeholder="업체명(영문)을 입력하세요.">  
+                </div>
+
+                <!-- 공장주소(중문) -->
+                <div class="block text-left md:flex md:items-center md:gap-2 bg-gray-100 px-3 py-2 border-bt ch_view">
+                  <span class="text-red-600 font-bold">*</span><label for="subs_company_address_ch" class="inline-block md:block md:w-1/5 text-left" id="label_company_address_ch">공장주소(중문)</label>
+                  <input id="subs_company_address_ch" type="text" maxlength="200" class="form-control md:w-4/5" placeholder="공장주소(중문)을 입력하세요.">  
+                </div>
+
+                <!-- 공장주소(영문) -->
+                <div class="block text-left md:flex md:items-center md:gap-2 bg-gray-100 px-3 py-2 border-bt">
+                  <span class="text-red-600 font-bold">*</span><label for="subs_company_address_en" class="inline-block md:block md:w-1/5 text-left" id="label_company_address_en">공장주소(영문)</label>
+                  <input id="subs_company_address_en" type="text" maxlength="200" class="form-control md:w-4/5" placeholder="공장주소(영문)을 입력하세요.">  
+                </div>
+
+                
+                <!-- 회사대표명 -->
+                <div class="block text-left md:flex md:items-center md:gap-2 bg-gray-100 px-3 py-2 border-bt">
+                  <span class="text-red-600 font-bold">*</span><label for="subs_ceo_name" class="inline-block md:block md:w-1/5 text-left" id="label_ceo_name">대표이름</label>
+                  <input id="subs_ceo_name" type="text" maxlength="200" class="form-control md:w-4/5" placeholder="업체명(중문)을 입력하세요.">  
+                </div>
+
+              
+
+                <!-- 송금통화 -->
+                <div class="block text-left md:flex md:items-center md:gap-2 bg-gray-100 px-3 py-2 border-bt">
+                  <span class="text-red-600 font-bold">*</span><div class="inline-block md:block md:w-1/5 text-left" id="label_chk_currency">remittance currency</div>
+                  <div class="w-full md:w-4/5 flex gap-3">    
+                    <label class="form-check-label" for="chk_currency_0">
+                      <input id="chk_currency_0" type="radio" name="chk_currency" class="form-check-input" value="KRW">  
+                      KRW
+                    </label>
+                    <label class="form-check-label" for="chk_currency_1">
+                      <input id="chk_currency_1" type="radio" name="chk_currency" class="form-check-input" value="USD">  
+                      USD
+                    </label>
+                  </div>  
+                </div>
+
+                <div class="block text-left md:flex md:items-center md:gap-2 bg-gray-100 px-3 py-2 border-bt">
+                  <span class="text-red-600 font-bold opacity-0">*</span><p for="subs_identity_number" class="inline-block md:block md:w-1/5 text-left"></p>
+                  <p maxlength="40" type="text" class="md:w-4/5 break-keep" >※ 에이전시(한국법인)에서 입금할 경우 세금계산서 발행을 위한 사업자등록증, 세금계산서 담당자 정보를 ksedu1@ksa.or.kr로 회신바랍니다.</p>
+                </div>
+
+                <!-- 입금자명 -->
+                <div class="block text-left md:flex md:items-center md:gap-2 bg-gray-100 px-3 py-2 border-bt">
+                  <span class="text-red-600 font-bold">*</span><label for="subs_depositor_name" class="inline-block md:block md:w-1/5 text-left" id="label_depositor_name">입금자명</label>
+                  <input id="subs_depositor_name" type="text" maxlength="200" class="form-control md:w-4/5" placeholder="입금자명을 입력하세요.">  
+                </div>
+                
+                <!-- 개인확인용 비밀번호 -->
+                <div class="block text-left md:flex md:items-center md:gap-2 bg-gray-100 px-3 py-2 border-bt">
+                  <span class="text-red-600 font-bold">*</span><label for="subs_user_password" class="inline-block md:block md:w-1/5 text-left" id="label_user_password">비밀번호</label>
+                  <input id="subs_user_password" type="password" maxlength="20" class="form-control md:w-4/5" placeholder="본인확인용 비밀번호를 입력하세요.">  
+                </div>
+
+                  <!-- 에이전트정보 -->
+                  <div class="block text-left md:flex md:items-center md:gap-2 bg-gray-100 px-3 py-2 border-bt">
+                    <span class="text-red-600 font-bold opacity-0">*</span><label for="subs_agent_name" class="inline-block md:block md:w-1/5 text-left" id="label_agent_name">에이전트</label>
+                    <input id="subs_agent_name" type="text" maxlength="200" class="form-control md:w-4/5" placeholder="에이전트를 입력하세요.">  
+                  </div>
+  
+                  <!-- 에이전트담당지 -->
+                  <div class="block text-left md:flex md:items-center md:gap-2 bg-gray-100 px-3 py-2 border-bt">
+                    <span class="text-red-600 font-bold opacity-0">*</span><label for="subs_agent_manager" class="inline-block md:block md:w-1/5 text-left" id="label_agent_manager">에이전트 담당자</label>
+                    <input id="subs_agent_manager" type="text" maxlength="200" class="form-control md:w-4/5" placeholder="에이전트 담당자를 입력하세요.">  
+                  </div>
+  
+                  <!-- 에이전트 연락처 -->
+                  <div class="block text-left md:flex md:items-center md:gap-2 bg-gray-100 px-3 py-2 border-bt">
+                    <span class="text-red-600 font-bold opacity-0">*</span><label for="agent_phone_number" class="inline-block md:block md:w-1/5 text-left" id="label_agent_phone_number">에이전트 연락처</label>
+                    <input id="agent_phone_number" type="text" maxlength="30" class="form-control md:w-4/5" placeholder="에이전트 연락처를 입력하세요('-'뺴고)" oninput="onlyNumberValue(this)">  
+                  </div>
+  
+                  <!-- 에이전트 이메일 -->
+                  <div class="block text-left md:flex md:items-center md:gap-2 bg-gray-100 px-3 py-2 border-bt">
+                    <span class="text-red-600 font-bold opacity-0">*</span><label for="agent_email" class="inline-block md:block md:w-1/5 text-left" id="label_agent_email">에이전트 이메일</label>
+                    <input id="agent_email" type="text" maxlength="100" class="form-control md:w-4/5" placeholder="이메일을 입력하세요." onchange="validateEmail(this)">  
+                  </div>
+
+                  <!-- 에이전트 위쳇 -->
+                 <div class="block text-left md:flex md:items-center md:gap-2 bg-gray-100 px-3 py-2 border-bt ch_view">
+                  <span class="text-red-600 font-bold opacity-0">*</span><label for="agent_wechat" class="inline-block md:block md:w-1/5 text-left" id="label_agent_wechat">参加人员微信</label>
+                  <input id="agent_wechat" type="text" maxlength="100" class="form-control md:w-4/5" placeholder="请输入参会者微信">
+                </div>
+
+                <button class="text-center  btn-default-bg-color hover:opacity-75 text-white font-bold py-2 px-4 mt-3 mb-5" id="btn_edu_application">신청하기</button>
+              </div>
+            </div>
+      </div>
+		</div>
+  	<div class="footer www main" id="div_footer">
+		</div>
+	</div>
+
+  <!-- izModal 출력 : 팝업 -->
+  <div id="modal_popup_1" aria-hidden="true" role="dialog">
+    <div id="popup_content_1"></div>
+  </div>
+
+  <!-- izModal 출력 : 알람/경고 -->
+  <div id="modal_status" class="status-modal"> 
+  </div>
+  <script src="admin/assets/libs/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+  <script>
+    // 언어 설정
+    $(async function(){
+      g_lang = urlParams('lang');
+      g_class_idx = urlParams('class');
+      g_class_time = urlParams('time');
+      g_class_name = urlParams('name');
+      g_class_time_idx = urlParams('time_idx');
+
+      if (isEmpty(g_class_idx) || isEmpty(g_class_time) || isEmpty(g_class_time_idx)){
+        gotoPage("index.html");
+      }
+      // pagelist에 정의된 페이지 템플릿 정보를 읽어온다.
+      await getPageList(PagesList);
+      $('#div_header').html(PagesContent.header2);
+      $('#div_footer').html(PagesContent.footer);
+
+      setLanguage("apply");
+
+      $('#class_idx').val(g_class_idx);
+      $('#class_time').val(g_class_time);
+      $('#class_country').val(g_lang);
+    });
+
+  </script>
+  
+</body></html>

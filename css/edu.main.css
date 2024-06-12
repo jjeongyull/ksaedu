@@ -1,0 +1,316 @@
+@charset "utf-8";
+
+.visual {position:relative; width:100%;}
+.visual .notice {display:none;}
+.visual .screen {position:relative; width:100%; height:58vw; font-size:0; line-height:0; overflow:hidden;}
+.visual .screen ul {position:absolute; left:0; top:0; width:100%; height:100%;}
+.visual .screen ul:after {clear:both; display:block; content:'';}
+.visual .screen ul li {float:left; width:100%; height:100%; background:#fde4e8 url(../images/edu/visual_00.jpg?ver=20200430) no-repeat center center; background-size:cover;}
+.visual .screen ul li a {display:block; width:100%; height:100%;}
+.visual .navi {position:absolute; right:10px; bottom:10px;}
+.visual .navi:after {clear:both; display:block; content:'';}
+.visual .navi dl dt {float:left; display:none; height:16px; font-size:12px; line-height:16px; letter-spacing:-1px; text-align:center;}
+.visual .navi dl dd {float:left; margin-left:4px;}
+.visual .navi dl dd:after {clear:both; display:block; content:'';}
+.visual .navi dl dd a {float:left; display:inline-block; width:20px; height:20px; margin-left:5px; font-size:0; line-height:0; background-repeat:no-repeat; background-position:center center; vertical-align:middle;}
+.visual .navi dl dd a:first-child {margin-left:0;}
+.visual .panel .navi dl dd a.prev {background-image:url(../images/edu/ic_navi_prev.png);}
+.visual .panel .navi dl dd a.pause {background-image:url(../images/edu/ic_navi_pause.png);}
+.visual .panel .navi dl dd a.pause.on {background-image:url(../images/edu/ic_navi_play.png);}
+.visual .panel .navi dl dd a.next {background-image:url(../images/edu/ic_navi_next.png);}
+
+.status {padding:15px;}
+.status dl {padding:10px; margin-top:15px; color:#fff; background:#222077 url(../images/edu/bg_main_status.png) repeat-y top right; border-radius:5px 0 5px 0;}
+.status dl:first-child {margin-top:0;}
+.status dl dt {position:relative; line-height:15px;}
+.status dl dt a {position:absolute; right:0; top:0; display:block; width:15px; height:15px; font-size:0; line-height:0; background:url(../images/edu/bg_main_more.png) no-repeat center center; background-size:15px 15px;}
+.status dl dd {padding-top:15px; margin-top:15px; border-top:1px solid #fff;}
+.status dl dd ul:after {clear:both; display:block; content:'';}
+.status dl dd ul li {float:left; width:30%; margin-left:5%; text-align:right;}
+.status dl dd ul li:first-child {margin-left:0;}
+.status dl dd ul li em {display:block; marign-bottom:5px; font-style:normal; text-align:left;}
+.status dl dd ul li strong {font-size:35px;}
+
+.category {display:none;}
+
+.course-area {padding:0 15px;}
+.course-area dl dt {text-align:center; font-size:20px; line-height:25px; font-family:"NotoSansKR"; color:#555;}
+.course-area dl dt strong {font-weight:normal; color:#000;}
+.course-area dl dd {padding-top:15px; margin-top:15px;}
+.course-area dl dd ul:after {clear:both; display:block; content:'';}
+.course-area dl dd ul li {float:left; width:233px; margin-left:15px; margin-bottom:15px;}
+.course-area dl dd ul li:first-child {margin-left:0;}
+.course-area dl dd ul li.empty {float:none; width:auto; line-height:215px; text-align:center; background-color:#f6f6f6;}
+.course-area dl dd ul li a {position:relative; display:block; line-height:20px;}
+.course-area dl dd ul li a img {width:233px; height:150px; vertical-align:middle;}
+.course-area dl dd ul li a s {display:block; width:233px; height:150px; font-style:normal; font-size:0; line-height:0; background-color:#f4f4f4; background-position:center center; background-repeat:no-repeat; background-size:233px 150px;}
+
+@media all and (min-width:1200px) {
+	.course-area dl dd ul li a s {display:block; width:233px; height:150px; font-style:normal; font-size:0; line-height:0; background-color:#f4f4f4; background-position:center center; background-repeat:no-repeat; background-size:contain;}
+}
+
+.course-area dl dd ul li a sel {display:block; width:233px; height:150px; font-style:normal; font-size:0; line-height:0; background-color:#f4f4f4; background-position:center center; background-repeat:no-repeat; background-size:233px 150px;}
+
+@media all and (min-width:1200px) {
+	.course-area dl dd ul li a sel {display:block; width:264px; height:150px; font-style:normal; font-size:0; line-height:0; background-color:#f4f4f4; background-position:center center; background-repeat:no-repeat; background-size:274px 164px; border-top-left-radius: 10px 10px; border-top-right-radius: 10px 10px;}
+}
+
+.course-area dl dd ul li a spl {display:block; width:233px; height:150px; font-style:normal; font-size:0; line-height:0; background-color:#f4f4f4; background-position:center center; background-repeat:no-repeat; background-size:233px 150px;}
+
+@media all and (min-width:1200px) {
+	.course-area dl dd ul li a spl {display:block; width:264px; height:150px; font-style:normal; font-size:0; line-height:0; background-color:#f4f4f4; background-position:center center; background-repeat:no-repeat; background-size:contain; border-top-left-radius: 10px 10px; border-top-right-radius: 10px 10px;}
+}
+
+.course-area dl dd ul li a p {
+	min-height: 64px;
+	background-color: #FAFAFA;
+	padding: 15px;
+	border-bottom-left-radius: 10px 10px;
+	border-bottom-right-radius: 10px 10px;
+	box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2), 0 2px 6px 0 rgba(0, 0, 0, 0.19);
+}
+
+.course-area dl dd ul li a pl {
+	min-height: 35px;
+	background-color: #FAFAFA;
+	padding: 15px;
+	border-bottom-left-radius: 10px 10px;
+	border-bottom-right-radius: 10px 10px;
+	box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2), 0 2px 6px 0 rgba(0, 0, 0, 0.19);
+}
+
+.course-area dl dd ul li a strong {display:block; margin-top:3px; color:#232177; overflow:hidden; word-break: keep-all; text-overflow: ellipsis; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical;}
+.course-area dl dd ul li a strong em {display:inline-block; padding:0 7px; margin-right:1px; line-height:20px; font-size:12px; font-style:normal; color:#fff; background-color:#689be0; border-radius:5px; vertical-align:middle;}
+.course-area dl dd ul li a strong em.icon-01 {background-color:#ffa0aa;}
+.course-area dl dd ul li a strong em.icon-02 {background-color:#ff4500;}
+.course-area dl dd ul li a strong em.attend {position:absolute; left:0; top:0;}
+.course-area dl dd ul li a strong em.attend-01 {ackground-color:#689be0;}
+.course-area dl dd ul li a strong em.attend-02 {background-color:#ff4500;}
+.course-area dl dd ul li a strong em.attend-03 {background-color:#ff9900;}
+.course-area dl dd ul li a strong i {font-style:normal;}
+
+.course-area dl dd ul li a:hover strong {color:#ff225b;}
+.course-area dl dd ul li a:hover strong em {background-color:#ff225b;}
+
+.course-area dl dd ul li a em {display:inline-block; padding:0 7px; margin-right:1px; line-height:20px; font-size:12px; font-style:normal; color:#fff; background-color:#689be0; border-radius:5px; vertical-align:middle;}
+.course-area dl dd ul li a em.icon-01 {background-color:#ffa0aa;}
+.course-area dl dd ul li a em.icon-02 {background-color:#ff4500;}
+.course-area dl dd ul li a em.attend {position:absolute; left:0; top:0;}
+.course-area dl dd ul li a em.attend-01 {ackground-color:#689be0;}
+.course-area dl dd ul li a em.attend-02 {background-color:#ff4500;}
+.course-area dl dd ul li a em.attend-03 {background-color:#ff9900;}
+.course-area dl dd ul li a i {font-style:normal;}
+
+.course-area dl dd ul li a:hover {color:#ff225b;}
+.course-area dl dd ul li a:hover em {background-color:#ff225b;}
+
+.course-area dl dd ul li a span {display:block; margin-top:10px; overflow:hidden; white-space:nowrap; text-overflow:ellipsis;font-size:13px;color:#888;}
+.course-area dl dd .screen {width:100%; min-height:250px; overflow:hidden; overflow-x:auto;}
+.course-area.www dl dd {padding-top:0; border-top-style:none;}
+.course-area.www dl dd ul {display:none;}
+.course-area.www dl dd ul.on {display:block;}
+.course-area.www dl dd .screen {margin-top:15px;;}
+.course-area.www dl dd .tab {border-bottom:2px solid #ddd;}
+.course-area.www dl dd .tab ul {display:block;}
+.course-area.www dl dd .tab ul:after {clear:both; display:block; content:'';}
+.course-area.www dl dd .tab ul li {position:relative; float:left; width:33%; height:40px; margin:0;}
+.course-area.www dl dd .tab ul li:first-child {width:34%;}
+.course-area.www dl dd .tab ul li a {position:absolute; left:0; bottom:-2px; display:block; width:100%; line-height:40px; text-align:center; border-bottom:2px solid #ddd; box-sizing:border-box; overflow:hidden; white-space:nowrap; text-overflow:ellipsis;}
+.course-area.www dl dd .tab ul li.on a,
+.course-area.www dl dd .tab ul li a:hover {color:#4c67ed; border-color:#699be0;}
+.course-area.www dl dd .tab ul li.on em {
+	position:absolute;
+	left:calc((100% - 11px) / 2);
+	left:-moz-calc((100% - 11px) / 2);
+	left:-webkit-calc((100% - 11px) / 2);
+	bottom:-6px;
+	display:block;
+	width:11px;
+	height:6px;
+	font-size:0;
+	line-height:0;
+	content:'here';
+	background:url(../images/edu/ic_arrow_bottom_5.png) no-repeat center center;
+}
+
+.inqr-area {padding:15px; padding-top:0; font-family:"NotoSansKR";}
+.inqr-area .screen .text {padding:15px; background-color:#f6f6f6;}
+.inqr-area .screen .text dt {position:relative; padding-bottom:15px; margin-bottom:15px; font-weight:bold; font-size:17px; line-height:20px; border-bottom:1px solid #aaa;}
+.inqr-area .screen .text dt a {display:inline-block; position:absolute; right:0; top:0; width:20px; height:20px; font-size:0; line-height:0; background:url(../images/edu/ic_more.png) no-repeat center center; background-size:20px 20px;}
+.inqr-area .screen .text dd {margin-top:5px;}
+.inqr-area .screen .text dd:first-child {margin-top:0;}
+.inqr-area .screen .text dd a {display:block; position:relative; padding-right:70px; line-height:20px; overflow:hidden; white-space:nowrap; text-overflow:ellipsis;}
+.inqr-area .screen .text dd a em {display:inline-block; position:absolute; right:0; top:0; font-style:normal; font-size:13px;}
+.inqr-area .screen .inqr {padding:15px; margin-top:15px; background-color:#f6f6f6;}
+.inqr-area .screen .inqr dt {padding-bottom:15px; font-weight:bold; font-size:17px; line-height:20px; border-bottom:1px solid #aaa;}
+.inqr-area .screen .inqr dd {line-height:20px; text-align:center;}
+.inqr-area .screen .inqr dd strong {display:block; margin:25px 0; font-size:17px; line-height:32px; letter-spacing:-1px;}
+.inqr-area .screen .inqr dd em {position:relative; display:block; width:200px; height:40px; margin:0 auto; font-style:normal; text-align:left;}
+.inqr-area .screen .inqr dd em span {position:absolute; right:0; top:0; display:inline-block; padding-left:15px; border-left:1px solid #ddd;}
+.inqr-area .screen .inqr dd .button {margin-top:15px;}
+.inqr-area .screen .inqr dd .button.f {margin-top:25px;}
+.inqr-area .screen .inqr dd .button:after {clear:both; display:block; content:'';}
+.inqr-area .screen .inqr dd .button a {
+	float:left;
+	display:block;
+	width:calc((100% - 15px) / 2); 
+	width:-moz-calc((100% - 15px) / 2); 
+	width:-webkit-calc((100% - 15px) / 2); 
+	margin-left:15px;
+	line-height:40px;
+	font-family:"NotoSansKR";
+	color:#333;
+	background-color:#fff;
+	box-sizing:border-box;
+	box-shadow:5px 5px 10px #ddd;
+}
+.inqr-area .screen .inqr dd .button a:first-child {margin-left:0;}
+.inqr-area.svc .screen .inqr dd .button a {width:100%; margin-left:0;}
+
+@media all and (min-width:1200px) {
+	.visual {padding:25px 0; font-family:"NotoSansKR"; background-color:#f6f6f6;}
+	.visual .panel {position:relative; width:645px; padding-right:775px; margin:0 auto; box-shadow:5px 5px 10px #f0f0f0;}
+	.visual .panel .notice {display:block; width:645px; height:450px; background-color:#eaf0fc;}
+	.visual .panel .notice .step {height:90px; padding:17px 30px; padding-top:18px; background-color:#d6edf3;}
+	.visual .panel .notice .step dl:after {clear:both; display:block; content:'';}
+	.visual .panel .notice .step dl dt {float:left; width:165px; height:80px; padding-top:10px; font-size:25px; line-height:30px; font-weight:bold;}
+	.visual .panel .notice .step dl dt a {display:block; width:55px; margin-top:15px; font-weight:normal; font-size:14px; line-height:20px; color:#333; background:url(../images/edu/ic_arrow_right.png) no-repeat right center; background-size:7px 12px;}
+	.visual .panel .notice .step dl dd {float:left; position:relative; width:90px; height:90px; padding-left:90px; margin-left:30px; background:url(../images/edu/ic_dot.png) no-repeat left center;}
+	.visual .panel .notice .step dl dd strong {display:block; position:absolute; left:32px; top:25px; width:78px; height:39px; font-size:17px; line-height:39px; text-align:center; font-weight:normal; color:#333; background:url(../images/edu/bg_main_study_title.png) no-repeat center center;}
+	.visual .panel .notice .step dl dd em {display:block; width:90px; height:90px; font-size:40px; line-height:90px; text-align:center; font-style:normal; font-weight:bold; color:#4c67ed; background:url(../images/edu/ic_circle_large.png) no-repeat center center;}
+	.visual .panel .notice .step dl dd:last-child em {color:#888;}
+	.visual .panel .notice .scrn:after {clear:both; display:block; content:'';}
+	.visual .panel .notice .scrn .text {float:left; width:375px; height:165px; padding:30px;}
+	.visual .panel .notice .scrn .text dt {position:relative; margin-bottom:25px; font-weight:bold; font-size:17px; line-height:20px;}
+	.visual .panel .notice .scrn .text dt a {display:inline-block; position:absolute; right:0; top:0; width:20px; height:20px; font-size:0; line-height:0; background:url(../images/edu/ic_more.png) no-repeat center center; background-size:20px 20px;}
+	.visual .panel .notice .scrn .text dd {margin-top:10px;}
+	.visual .panel .notice .scrn .text dd:first-child {margin-top:0;}
+	.visual .panel .notice .scrn .text dd a {display:block; position:relative; padding-right:70px; line-height:20px; overflow:hidden; white-space:nowrap; text-overflow:ellipsis;}
+	.visual .panel .notice .scrn .text dd a em {display:inline-block; position:absolute; right:0; top:0; font-style:normal; font-size:13px;}
+	.visual .panel .notice .scrn .banner {float:left; width:210px;}
+	.visual .panel .notice .scrn .banner ul li {height:75px; background-color:#fff; background-position:left center; background-repeat:no-repeat; box-sizing:border-box;}
+	.visual .panel .notice .scrn .banner ul li.banner-01 {background-image:url(../images/edu/bg_main_banner_01.png);}
+	.visual .panel .notice .scrn .banner ul li.banner-02 {background-image:url(../images/edu/bg_main_banner_02.png);}
+	.visual .panel .notice .scrn .banner ul li.banner-03 {background-image:url(../images/edu/bg_main_banner_03.png);}
+	.visual .panel .notice .scrn .banner ul li a {display:block; padding:30px 0; padding-left:80px; font-size:17px; line-height:20px; font-family:"NotoSansKR"; color:#333; background:url(../images/edu/bg_main_banner_line.png) no-repeat center top;}
+	.visual .panel .notice .scrn .banner ul li:first-child a {background-image:none;}
+	.visual .panel .notice .inqr {height:100px; color:#fff; background-color:#bcbff8;}
+	.visual .panel .notice .inqr:after {clear:both; display:block; content:'';}
+	.visual .panel .notice .inqr dt {float:left; padding:0 30px; font-size:23px; line-height:100px;}
+	.visual .panel .notice .inqr dd {float:left;}
+	.visual .panel .notice .inqr dd strong {display:inline-block; font-size:35px; line-height:100px; vertical-align:middle;}
+	.visual .panel .notice .inqr dd em {display:inline-block; margin-left:15px; line-height:20px; font-style:normal; vertical-align:middle;}
+	
+	.visual .panel .notice .cate {position:relative; width:445px; height:190px; padding:10px 0 50px 200px; font-family:"NotoSansKR"; background:url(../images/edu/bg_main_cate.png) no-repeat right bottom;}
+	.visual .panel .notice .cate .type {position:absolute; left:-25px; top:25px; width:200px; background-color:#b6caeb; box-shadow:5px 5px 10px #dbe2f0;}
+	.visual .panel .notice .cate .type ul li.on {background:#699be0 url(../images/edu/bg_main_type_on.png) no-repeat right center;}
+	.visual .panel .notice .cate .type ul li a {display:block; padding:20px; line-height:25px; font-size:18px; font-family:"NotoSansKR";}
+	.visual .panel .notice .cate .type ul li a:hover {color:#000;}
+	.visual .panel .notice .cate .type ul li:last-child a {background-color:#b6c3e9;}
+	.visual .panel .notice .cate .type ul li:first-child a {background-color:#b6c3e9;}
+	.visual .panel .notice .cate .type ul li.on a {color:#fff; background-color:transparent;}
+	.visual .panel .notice .cate .list strong {display:none; padding:10px 20px; margin:0 30px 10px 0; font-size:16px; line-height:20px; font-weight:normal; color:#fff; background-color:#72a7f0; border-radius:5px;}
+	.visual .panel .notice .cate .list strong.on {display:block;}
+	.visual .panel .notice .cate .list ul {display:none;}
+	.visual .panel .notice .cate .list ul:after {clear:both; display:block; content:'';}
+	.visual .panel .notice .cate .list ul.on {display:block;}
+	.visual .panel .notice .cate .list ul li {float:left; width:50%; line-height:20px; font-size:16px;}
+	.visual .panel .notice .cate .list ul li a {line-height:30px; font-family:"NotoSansKR";}
+	.visual .panel .notice .cate .list ul li a:hover {color:#000; text-decoration:underline; font-weight:bold;}
+	.visual .panel .notice .cate .list ul.ol li {width:25%; font-size:14px; letter-spacing:-1px; overflow:hidden; white-space:nowrap; text-overflow:ellipsis;}
+	.visual .panel .notice .cate .list ul.ol li a {line-height:26px;}
+	.visual .panel .screen {position:absolute; right:0; top:0; width:775px; height:450px;}
+	
+	.visual.www {padding-bottom:0; background-color:#fff;}
+	.visual.www .panel .notice .banner {float:none; width:auto;}
+	.visual.www .panel .notice .banner ul:after {clear:both; display:block; content:'';}
+	.visual.www .panel .notice .banner ul li {float:left; width:50%; height:100px; border-right:1px solid #8393ca; border-bottom:1px solid #8393ca; background-color:#fff; background-position:left center; background-repeat:no-repeat; box-sizing:border-box;}
+	.visual.www .panel .notice .banner ul li:first-child {height:100px; border-left:1px solid #8393ca;}
+	.visual.www .panel .notice .banner ul:first-child li {border-top:1px solid #8393ca;}
+	.visual.www .panel .notice .banner ul li.banner-01 {background-image:url(../images/edu/bg_main_banner_01_www.png);}
+	.visual.www .panel .notice .banner ul li.banner-02 {background-image:url(../images/edu/bg_main_banner_02_www.png);}
+	.visual.www .panel .notice .banner ul li.banner-03 {background-image:url(../images/edu/bg_main_banner_03_www.png);}
+	.visual.www .panel .notice .banner ul li.banner-04 {background-image:url(../images/edu/bg_main_banner_04_www.png);}
+	.visual.www .panel .notice .banner ul li.banner-05 {background-image:url(../images/edu/bg_main_banner_03_www.png);}
+	.visual.www .panel .notice .banner ul li a {display:block; padding:40px 30px 40px 110px; font-size:17px; line-height:20px; font-family:"NotoSansKR"; color:#333;}
+	
+	.visual.www .panel .notice .banner ul li.banner-03 a {padding-top:30px; padding-bottom:30px;}	
+	.visual.www .panel .notice .banner ul li.banner-03 a em {display:block; font-style:normal; color:#888;}
+	
+	.visual.www .panel .notice .banner ul li.banner-04 a {padding-top:30px; padding-bottom:30px;}	
+	.visual.www .panel .notice .banner ul li.banner-04 em {display:block; font-style:normal; color:#888;}
+	
+	.visual.www .panel .notice .banner ul li.banner-05 a {padding-top:40px; padding-bottom:30px;}	
+	.visual.www .panel .notice .banner ul li.banner-05 a em {display:block; font-style:normal; color:#888;}
+	/*
+	.visual.www .panel .notice .banner ul li.banner-04 a:first-child {padding-top:25px; padding-bottom:5px;}
+	.visual.www .panel .notice .banner ul li.banner-04 a:last-child {padding-top:5px; padding-bottom:25px;}
+	
+	.visual.www .panel .notice .banner ul li.banner-05 a:first-child {padding-top:25px; padding-bottom:5px;}
+	.visual.www .panel .notice .banner ul li.banner-05 a:last-child {padding-top:5px; padding-bottom:25px;}
+	.visual.www .panel .notice .banner ul li.banner-05 a em { font-style:normal; color:#888;}
+	*/
+	.status {display:none;}
+	
+	.category {display:block; padding:25px 0; font-family:"NotoSansKR"; background-color:#eceeff;}
+	.category .screen {width:1420px; margin:0 auto;}
+	.category .screen:after {clear:both; display:block; content:'';}
+	.category .screen .type {float:left; width:280px; height:240px; background-color:#d7daef;}
+	.category .screen .type ul li a {display:block; line-height:80px; font-size:20px; text-align:center; color:#666; background-color:#d7daef;}
+	.category .screen .type ul li.on a {color:#000; background-color:#fff;}
+	.category .screen .list {float:left; width:1080px; padding:30px; background-color:#fff;}
+	.category .screen .list .more {display:none;}
+	.category .screen .list .more.on {display:block;}
+	.category .screen .list .more ul {margin-top:30px;}
+	.category .screen .list .more ul:first-child {margin-top:0;}
+	.category .screen .list .more ul:after {clear:both; display:block; content:'';}
+	.category .screen .list .more ul li {float:left; width:240px; margin-left:30px;}
+	.category .screen .list .more ul li a {display:block; font-size:17px; line-height:70px; font-family:"NotoSansKR"; text-align:center; border:2px solid #ddd; background-color:#fff; border-radius:35px;}
+	.category .screen .list .more ul li a:hover {color:#949ee7; border-color:#949ee7;}
+	
+	.category .screen.one .type {width:200px; height:72px; padding:30px 0; background-color:transparent;}
+	.category .screen.one .type strong {display:block; padding-left:45px; font-size:22px; line-height:72px; background:url(../images/edu/bg_main_category_more.png) no-repeat left center;}
+	.category .screen.one .list {float:left; width:1220px; padding:30px 0; background-color:transparent;}
+	.category .screen.one .list .more ul li:first-child {margin-left:0;}
+	.category .screen.one .list .more ul li a {border-color:#fff;}
+	.category .screen.one .list .more ul li a:hover {border-color:#949ee7;}
+	
+	.course-area {padding:0; margin-top:50px;}
+	.course-area.l,
+	.course-area.n {margin-bottom:20px;}
+	.course-area dl {width:1420px; margin:0 auto;}
+	.course-area dl dt {position:relative; font-size:30px; line-height:35px; color:#555;}
+	.course-area dl dt strong {font-weight:normal; color:#000;}
+	.course-area dl dd {padding-top:0; margin-top:25px; border-top-style:none;}
+	.course-area dl dd ul {width:auto !important;}
+	.course-area dl dd ul li {
+		width:calc((100% - 100px) / 5);
+		width:-moz-calc((100% - 100px) / 5);
+		width:-webkit-calc((100% - 100px) / 5);
+		margin-left:25px;
+		margin-bottom:25px;
+	}
+	.course-area dl dd ul li.f {margin-left:0;}
+	.course-area dl dd ul li a img {width:100%; height:200px;}
+	.course-area dl dd ul li a s {width:100%; height:200px;}
+	.course-area dl dd ul.ol li a strong {margin:0; font-size:0; line-height:0;}
+	.course-area dl dd ul.ol li a strong em,
+	.course-area dl dd ul.ol li a strong i {display:none;}
+	.course-area dl dd ul.ol li a strong em.attend {display:inline-block;}
+	.course-area dl dd ul.ol li a span {margin-top:15px;}
+	.course-area dl dd .screen {height:auto; overflow:visible;}
+	.course-area.www dl dd .tab {margin-bottom:0;}
+	.course-area.www dl dd .tab ul li {width:200px; margin:0;}
+	.course-area.www dl dd .tab ul li:first-child {width:200px;}
+	
+	.inqr-area.svc {display:none;}
+	.inqr-area {padding:50px 0; background-color:#f6f6f6;}
+	.inqr-area .screen {width:1420px; margin:0 auto;}
+	.inqr-area .screen:after {clear:both; display:block; content:'';}
+	.inqr-area .screen .text {float:left; width:685px; padding:0;}
+	.inqr-area .screen .text dl dd a {line-height:35px;}
+	.inqr-area .screen .inqr {float:right; width:685px; padding:0; margin:0;}
+	.inqr-area .screen .inqr dl dd strong {font-size:30px; line-height:35px;}
+	.inqr-area .screen .inqr dd .button a {line-height:45px;}
+	.inqr-area .screen .inqr dd .button a:hover {color:#ff4500;}
+}

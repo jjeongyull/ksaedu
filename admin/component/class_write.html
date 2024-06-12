@@ -1,0 +1,340 @@
+<script src="https://unpkg.com/@material-tailwind/html@latest/scripts/tabs.js"></script>
+
+<div class="mb-2">
+  <!-- content  -->
+  <div class="row mb-1">
+    <input type="hidden" id="idx">
+    <label for="class_name_ko" class="col-12 col-md-2 col-form-label text-sm font-bold
+        form-label text-muted break-keep leading-4">교육 과정명(국문)</label>
+    <div class="col-12 col-md-10">
+      <input type="text" id="class_name_ko" maxlength="200" class="form-control" placeholder="교육 과정명(국문)을 작성하세요.">
+      <label style="color:red; font-size:12px;">* 국문 과정명은 중복될 수 없습니다.</label>
+    </div>
+  </div>
+
+  <div class="row mb-1 items-center">
+    <label for="class_name_ch" class="col-12 col-md-2 col-form-label text-sm font-bold
+        form-label text-muted break-keep leading-4">교육 과정명(중문)</label>
+    <div class="col-12 col-md-10">
+      <input type="text" id="class_name_ch" maxlength="300" class="form-control" placeholder="교육 과정명(중문)을 작성하세요.">
+    </div>
+  </div>
+
+  <div class="row mb-1 items-center">
+    <label for="class_name_en" class="col-12 col-md-2 col-form-label text-sm font-bold
+        form-label text-muted break-keep leading-4">교육 과정명(영문)</label>
+    <div class="col-12 col-md-10">
+      <input type="text" id="class_name_en" maxlength="300" class="form-control" placeholder="교육 과정명(중문)을 작성하세요.">
+    </div>
+  </div>
+
+  <div class="row mb-1 items-center">
+    <label for="class_manager_ch" class="col-12 col-md-2 col-form-label text-sm font-bold
+    form-label text-muted break-keep leading-4">중문교육 담당자</label>
+    <div class="col-12 col-md-10">
+      <input type="text" id="class_manager_ch" maxlength="300" class="form-control" placeholder="중문교육 담당자를 작성하세요.">
+    </div>
+  </div>
+
+  <div class="row mb-1 items-center">
+    <label for="class_manager_en" class="col-12 col-md-2 col-form-label text-sm font-bold
+    form-label text-muted break-keep leading-4">영문교육 담당자</label>
+    <div class="col-12 col-md-10">
+      <input type="text" id="class_manager_en" maxlength="150" class="form-control" placeholder="영문교육 담당자를 작성하세요.">
+    </div>
+  </div>
+
+  <div class="row mb-1 items-center">
+    <label for="class_info_tel" class="col-12 col-md-2 col-form-label text-sm font-bold
+    form-label text-muted break-keep leading-4">교육처 전화번호</label>
+    <div class="col-12 col-md-10">
+      <input type="text" id="class_info_tel" maxlength="20" onkeyup="formatPhoneNumber(this)" class="form-control" placeholder="교육처 전화번호를 작성하세요.">
+    </div>
+  </div>
+
+  <div class="row mb-1 items-center">
+    <label for="class_info_fax" class="col-12 col-md-2 col-form-label text-sm font-bold
+    form-label text-muted break-keep leading-4">교육처 팩스번호</label>
+    <div class="col-12 col-md-10">
+      <input type="text" id="class_info_fax" maxlength="20" class="form-control" onkeyup="formatPhoneNumber(this)" placeholder="교육처 팩스번호를 작성하세요.">
+    </div>
+  </div>
+
+  <div class="row mb-1 items-center">
+    <label for="class_info_email" class="col-12 col-md-2 col-form-label text-sm font-bold
+    form-label text-muted break-keep leading-4">교육처 이메일</label>
+    <div class="col-12 col-md-10">
+      <input type="text" id="class_info_email" maxlength="200" class="form-control" placeholder="교육처 팩스번호를 작성하세요.">
+    </div>
+  </div>
+
+  <div class="row mb-1 items-center">
+    <label for="pay_en_en" class="col-12 col-md-2 col-form-label text-sm font-bold
+    form-label text-muted break-keep leading-4">영문교육신청시 달러</label>
+    <div class="col-12 col-md-10">
+      <input type="text" id="pay_en_en" onchange="inputNum(this);numberWithCommas(this);" onkeyup=numberWithCommas(this) maxlength="100" class="form-control" placeholder="영문교육신청시 달러를 작성하세요.">
+    </div>
+  </div>
+
+  <div class="row mb-1 items-center">
+    <label for="pay_kr_en" class="col-12 col-md-2 col-form-label text-sm font-bold
+    form-label text-muted break-keep leading-4">영문교육신청시 한화</label>
+    <div class="col-12 col-md-10">
+      <input type="text" id="pay_kr_en" onchange="inputNum(this);numberWithCommas(this);" onkeyup=numberWithCommas(this) maxlength="100" class="form-control" placeholder="영문교육신청시 한화를 작성하세요.">
+    </div>
+  </div>
+
+  <div class="row mb-1 items-center">
+    <label for="pay_dal_ch" class="col-12 col-md-2 col-form-label text-sm font-bold
+    form-label text-muted break-keep leading-4">중문교육신청시 달러(대면)</label>
+    <div class="col-12 col-md-10">
+      <input type="text" id="pay_dal_ch" onchange="inputNum(this);numberWithCommas(this);" onkeyup=numberWithCommas(this) maxlength="100" class="form-control" placeholder="중문교육신청시 달러를 작성하세요.">
+    </div>
+  </div>
+
+  <div class="row mb-1 items-center">
+    <label for="pay_ch_ch" class="col-12 col-md-2 col-form-label text-sm font-bold
+    form-label text-muted break-keep leading-4">중문교육신청시 한화(대면)</label>
+    <div class="col-12 col-md-10">
+      <input type="text" onchange="inputNum(this);numberWithCommas(this);" onkeyup=numberWithCommas(this) id="pay_ch_ch" maxlength="100" class="form-control" placeholder="중문교육신청시 원화를 작성하세요.">
+    </div>
+  </div>
+
+  <div class="row mb-1 items-center">
+    <label for="pay_dal_ch_1" class="col-12 col-md-2 col-form-label text-sm font-bold
+    form-label text-muted break-keep leading-4">중문교육신청시 달러(비대면)</label>
+    <div class="col-12 col-md-10">
+      <input type="text" id="pay_dal_ch_1" onchange="inputNum(this);numberWithCommas(this);" onkeyup=numberWithCommas(this) maxlength="100" class="form-control" placeholder="중문교육신청시 달러를 작성하세요.">
+    </div>
+  </div>
+
+  <div class="row mb-1 items-center">
+    <label for="pay_ch_ch_1" class="col-12 col-md-2 col-form-label text-sm font-bold
+    form-label text-muted break-keep leading-4">중문교육신청시 한화(비대면)</label>
+    <div class="col-12 col-md-10">
+      <input type="text" onchange="inputNum(this);numberWithCommas(this);" onkeyup=numberWithCommas(this) id="pay_ch_ch_1" maxlength="100" class="form-control" placeholder="중문교육신청시 원화를 작성하세요.">
+    </div>
+  </div>
+
+  <div class="row mb-1 items-center">
+    <label for="img_ch" class="col-12 col-md-2 col-form-label text-sm font-bold
+    form-label text-muted break-keep leading-4">중문교육 이미지</label>
+    <div class="col-12 col-md-10">
+      <input type="file" id="img_ch" maxlength="100" class="form-control" placeholder="중문교육신청시 이미지를 삽입하세요.">
+    </div>
+  </div>
+  <div class="mb-1" id="preview_ch_img">
+
+  </div>
+
+  <div class="row mb-1 items-center">
+    <label for="img_en" class="col-12 col-md-2 col-form-label text-sm font-bold
+    form-label text-muted break-keep leading-4">영문교육 이미지</label>
+    <div class="col-12 col-md-10">
+      <input type="file" id="img_en" maxlength="100" class="form-control" placeholder="영문교육신청시 이미지를 삽입하세요.">
+    </div>
+  </div>
+  <div class="mb-1" id="preview_en_img">
+  </div>
+
+  <div class="row mb-1 items-center">
+    <label for="view_order" class="col-12 col-md-2 col-form-label text-sm font-bold
+    form-label text-muted break-keep leading-4">사용자화면 노출 순서</label>
+    <div class="col-12 col-md-10">
+      <input type="text" id="view_order" onchange="inputNum(this);" onkeyup=inputNum(this) maxlength="10" class="form-control" placeholder="사용자 화면에 나타날 순서를 지정하세요.">
+    </div>
+  </div>
+
+  <div class="row mb-1 items-center">
+    <label for="pay_ch_ch_1" class="col-12 col-md-2 col-form-label text-sm font-bold
+    form-label text-muted break-keep leading-4">활성화여부</label>
+    <div class="col-12 col-md-10">
+      <input type="radio" class="form-check-label" name="radio_class_isactive" id="radio_class_active" value="1">
+      <label for="radio_class_active" class="mr-2.5">&nbsp;활성화</label>
+      <input type="radio" class="form-check-label" name="radio_class_isactive" id="radio_class_unactive" value="0" checked>
+      <label for="radio_class_unactive">&nbsp;비활성화</label>
+    </div>
+  </div>
+
+  <!-- <div class="flex justify-end">
+    <button class="basic-btn-2 btn-default-bg-color text-white py-1 px-3 ml-2  text-sm" id="btn_insert_class_list">등록</button>
+  </div> -->
+
+  <div class="flex justify-end mt-2">
+    <button class="basic-btn-2 btn-default-bg-color text-white py-1 px-3 ml-2  text-sm" id="btn_insert_class_list">등록</button>
+  </div>
+
+  <h2 class="mt-5 font-bold">교육 세부 정보 입력</h2>
+  <hr class="mt-2 mb-2">  
+  <div class="row items-center">
+    <!-- <label for="pay_ch_ch_1" class="col-12 col-md-2 col-form-label text-sm font-bold
+    form-label text-muted break-keep">교육안내정보</label> -->
+    <div class="col-12">
+      <div>
+        <div class="relative right-0">
+          <ul
+            class="relative flex flex-wrap p-1 list-none rounded-xl bg-blue-gray-50/60"
+            data-tabs="tabs"
+            role="list"
+          >
+            <li class="z-30 flex-auto text-center">
+              <a
+                class="z-30 flex items-center justify-center w-full px-0 py-1 mb-0 transition-all ease-in-out border-0 rounded-lg cursor-pointer text-slate-700 bg-inherit"
+                data-tab-target=""
+                active=""
+                role="tab"
+                aria-selected="true"
+                aria-controls="korean"
+              >
+                <span class="ml-1">국문</span>
+              </a>
+            </li>
+            <li class="z-30 flex-auto text-center">
+              <a
+                class="z-30 flex items-center justify-center w-full px-0 py-1 mb-0 transition-all ease-in-out border-0 rounded-lg cursor-pointer text-slate-700 bg-inherit"
+                data-tab-target=""
+                role="tab"
+                aria-selected="false"
+                aria-controls="chineses"
+              >
+                <span class="ml-1">중문</span>
+              </a>
+            </li>
+            <li class="z-30 flex-auto text-center">
+              <a
+                class="z-30 flex items-center justify-center w-full px-0 py-1 mb-0 transition-all ease-in-out border-0 rounded-lg cursor-pointer text-slate-700 bg-inherit"
+                data-tab-target=""
+                role="tab"
+                aria-selected="false"
+                aria-controls="english"
+              >
+                <span class="ml-1">영문</span>
+              </a>
+            </li>
+          </ul>
+          <div data-tab-content="" class="p-3">
+            <div class="block opacity-100" id="korean" role="tabpanel">
+              <div class="row mb-2 items-center">
+                <label for="pay_ch_ch_1" class="col-12 col-md-2 col-form-label text-sm font-bold
+                form-label text-muted break-keep">교육비 안내</label>
+                <div class="col-12 col-md-10">
+                  <textarea class="form-control" id="class_cost_info_ko" cols="100" rows="5"></textarea>
+                </div>
+              </div>
+              <div class="row mb-2 items-center">
+                <label for="pay_ch_ch_1" class="col-12 col-md-2 col-form-label text-sm font-bold
+                form-label text-muted break-keep">교육비 납부 안내</label>
+                <div class="col-12 col-md-10">
+                  <textarea class="form-control" id="class_cost_method_info_ko" cols="100" rows="5"></textarea>
+                </div>
+              </div>
+              <div class="row mb-2 items-center">
+                <label for="pay_ch_ch_1" class="col-12 col-md-2 col-form-label text-sm font-bold
+                form-label text-muted break-keep">교육 일정/장소</label>
+                <div class="col-12 col-md-10">
+                  <textarea class="form-control" id="class_schedule_info_ko" cols="100" rows="5"></textarea>
+                </div>
+              </div>
+              <div class="row mb-2 items-center">
+                <label for="pay_ch_ch_1" class="col-12 col-md-2 col-form-label text-sm font-bold
+                form-label text-muted break-keep">학습방법</label>
+                <div class="col-12 col-md-10">
+                  <textarea class="form-control" id="class_method_info_ko" cols="100" rows="5"></textarea>
+                </div>
+              </div>
+              <div class="row mb-2 items-center">
+                <label for="pay_ch_ch_1" class="col-12 col-md-2 col-form-label text-sm font-bold
+                form-label text-muted break-keep">과정안내</label>
+                <div class="col-12 col-md-10">
+                  <textarea class="form-control" id="class_content_info_ko" cols="100" rows="5"></textarea>
+                </div>
+              </div>
+            </div>
+            <div class="hidden opacity-0" id="chineses" role="tabpanel">
+              <div class="row mb-2 items-center">
+                <label for="pay_ch_ch_1" class="col-12 col-md-2 col-form-label text-sm font-bold
+                form-label text-muted break-keep">교육비 안내</label>
+                <div class="col-12 col-md-10">
+                  <textarea class="form-control" id="class_cost_info_ch" cols="100" rows="5"></textarea>
+                </div>
+              </div>
+              <div class="row mb-2 items-center">
+                <label for="pay_ch_ch_1" class="col-12 col-md-2 col-form-label text-sm font-bold
+                form-label text-muted break-keep">교육비 납부 안내</label>
+                <div class="col-12 col-md-10">
+                  <textarea class="form-control" id="class_cost_method_info_ch" cols="100" rows="5"></textarea>
+                </div>
+              </div>
+              <div class="row mb-2 items-center">
+                <label for="pay_ch_ch_1" class="col-12 col-md-2 col-form-label text-sm font-bold
+                form-label text-muted break-keep">교육 일정/장소</label>
+                <div class="col-12 col-md-10">
+                  <textarea class="form-control" id="class_schedule_info_ch" cols="100" rows="5"></textarea>
+                </div>
+              </div>
+              <div class="row mb-2 items-center">
+                <label for="pay_ch_ch_1" class="col-12 col-md-2 col-form-label text-sm font-bold
+                form-label text-muted break-keep">학습방법</label>
+                <div class="col-12 col-md-10">
+                  <textarea class="form-control" id="class_method_info_ch" cols="100" rows="5"></textarea>
+                </div>
+              </div>
+              <div class="row mb-2 items-center">
+                <label for="pay_ch_ch_1" class="col-12 col-md-2 col-form-label text-sm font-bold
+                form-label text-muted break-keep">과정안내</label>
+                <div class="col-12 col-md-10">
+                  <textarea class="form-control" id="class_content_info_ch" cols="100" rows="5"></textarea>
+                </div>
+              </div>
+            </div>
+            <div class="hidden opacity-0" id="english" role="tabpanel">
+              <div class="row mb-2 items-center">
+                <label for="pay_ch_ch_1" class="col-12 col-md-2 col-form-label text-sm font-bold
+                form-label text-muted break-keep">교육비 안내</label>
+                <div class="col-12 col-md-10">
+                  <textarea class="form-control" id="class_cost_info_en" cols="100" rows="5"></textarea>
+                </div>
+              </div>
+              <div class="row mb-2 items-center">
+                <label for="pay_ch_ch_1" class="col-12 col-md-2 col-form-label text-sm font-bold
+                form-label text-muted break-keep">교육비 납부 안내</label>
+                <div class="col-12 col-md-10">
+                  <textarea class="form-control" id="class_cost_method_info_en" cols="100" rows="5"></textarea>
+                </div>
+              </div>
+              <div class="row mb-2 items-center">
+                <label for="pay_ch_ch_1" class="col-12 col-md-2 col-form-label text-sm font-bold
+                form-label text-muted break-keep">교육 일정/장소</label>
+                <div class="col-12 col-md-10">
+                  <textarea class="form-control" id="class_schedule_info_en" cols="100" rows="5"></textarea>
+                </div>
+              </div>
+              <div class="row mb-2 items-center">
+                <label for="pay_ch_ch_1" class="col-12 col-md-2 col-form-label text-sm font-bold
+                form-label text-muted break-keep">학습방법</label>
+                <div class="col-12 col-md-10">
+                  <textarea class="form-control" id="class_method_info_en" cols="100" rows="5"></textarea>
+                </div>
+              </div>
+              <div class="row mb-2 items-center">
+                <label for="pay_ch_ch_1" class="col-12 col-md-2 col-form-label text-sm font-bold
+                form-label text-muted break-keep">과정안내</label>
+                <div class="col-12 col-md-10">
+                  <textarea class="form-control" id="class_content_info_en" cols="100" rows="5"></textarea>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="flex justify-end mb-8">
+    <button class="basic-btn-2 bg-red-400 text-white py-1 px-3 ml-2  text-sm display-none" id="btn_delete_class_list">삭제</button>
+    <button class="basic-btn-2 btn-default-bg-color text-white py-1 px-3 ml-2  text-sm" id="btn_insert_class_list2">등록</button>
+  </div>
+  
+
+</div>
+

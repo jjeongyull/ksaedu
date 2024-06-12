@@ -1,0 +1,83 @@
+input{
+  font-size: 12px !important;
+}
+select{
+  font-size: 12px !important;
+}
+.lh-1 {
+  font-size: 12px !important;
+}
+.dropdown-item{
+  font-size: 12px !important;
+}
+.paginate_button{
+  font-size: 12px !important;
+}
+th{
+  font-size: 13px !important;
+}
+.dataTables_wrapper .dataTables_paginate .paginate_button.current, .dataTables_wrapper .dataTables_paginate .paginate_button.current:hover{
+  border: none;
+  background-color: #6899c4;
+  color: #fff !important;
+}
+.btn-close{
+  background-image: url('data:image/svg+xml;charset=utf-8,%3Csvg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16"%3E%3Cpath d="M.293.293a1 1 0 0 1 1.414 0L8 6.586 14.293.293a1 1 0 1 1 1.414 1.414L9.414 8l6.293 6.293a1 1 0 0 1-1.414 1.414L8 9.414l-6.293 6.293a1 1 0 0 1-1.414-1.414L6.586 8 .293 1.707a1 1 0 0 1 0-1.414z"/%3E%3C/svg%3E') !important;
+}
+.form-control{
+  padding: 0.4rem 0.8rem !important;
+}
+.form-select{
+  padding: 0.4rem 3rem 0.4rem .8rem !important;
+}
+
+.datatable-tr:hover{
+  background-color: #f1f5f99a;
+}
+.cus-select{
+  border: 1px solid #aaa;
+  border-radius: 3px;
+  padding: 5px;
+  background-color: transparent;
+  color: inherit;
+  margin-right: 3px;
+}
+.dataTables_filter label{
+  font-size: 0;
+}
+.subs-cus-input{
+  border: 1px solid #aaa;
+  border-radius: 3px;
+  padding: 5px;
+  background-color: transparent;
+  color: inherit;
+}
+.border-bottom-1{
+  border-bottom: 1px solid #d4d4d4;
+}
+.border-right-1{
+  border-right: 1px solid #d4d4d4;
+}
+
+/* datatable기본 마진 제거 */
+.dataTables_wrapper .dataTables_filter input{
+  margin-left: 0;
+}
+.fixed-column {
+  position: sticky !important;
+  left: 0;
+  z-index: 99;
+  transition: .3s;
+  border-right: 1px solid rgba(0, 0, 0, 0.3);
+}
+td.fixed-column {
+  background-color: #fff !important;
+  z-index: 9;
+}
+td.fixed-column:hover{
+  background-color: rgb(226, 226, 226) !important;
+}
+.step2-table-div .step2-table li a{
+  display: inline;
+  word-break: break-all;
+}

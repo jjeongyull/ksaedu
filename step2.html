@@ -1,0 +1,171 @@
+<html lang="ko">
+  <head>
+    <meta charset="utf-8">
+    <meta name="format-detection" content="telephone=no, address=no, email=no">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta http-equiv="Cache-Control" content="no-cache">
+    <meta http-equiv="Expires" content="0">
+    <meta http-equiv="Pragma" content="no-cache">
+    <title>KSA EDU</title>
+    <link rel="apple-touch-icon" sizes="57x57" href="favicon/apple-icon-57x57.png">
+    <link rel="apple-touch-icon" sizes="60x60" href="favicon/apple-icon-60x60.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="favicon/apple-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="favicon/apple-icon-76x76.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="favicon/apple-icon-114x114.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="favicon/apple-icon-120x120.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="favicon/apple-icon-144x144.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="favicon/apple-icon-152x152.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="favicon/apple-icon-180x180.png">
+    <link rel="icon" type="image/png" sizes="192x192"  href="favicon/android-icon-192x192.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="96x96" href="favicon/favicon-96x96.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="favicon/favicon-16x16.png">
+    <link rel="manifest" href="favicon/manifest.json">
+    <meta name="msapplication-TileColor" content="#ffffff">
+    <meta name="msapplication-TileImage" content="favicon/ms-icon-144x144.png">
+    <meta name="theme-color" content="#ffffff">
+
+		<script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&amp;display=swap" rel="stylesheet">
+
+    <!-- Libs CSS -->
+    <link href="assets/libs/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
+    <link href="assets/libs/dropzone/dist/dropzone.css"  rel="stylesheet">
+    <link href="assets/libs/@mdi/font/css/materialdesignicons.min.css" rel="stylesheet" />
+    <link href="assets/libs/prismjs/themes/prism-okaidia.min.css" rel="stylesheet">
+
+    <!-- Theme CSS -->
+    <link rel="stylesheet" href="assets/css/theme.css">
+
+    <!-- 수정 테마 : 버튼 -->
+    <link rel="stylesheet" href="assets/css/button.css">
+
+    <link rel="stylesheet" type="text/css" href="css/edu.css?ver=nLlwOdnMgz1708089502753">
+    <link rel="stylesheet" type="text/css" href="css/edu.main.css?ver=wmdzWDEi0p1708089502738">
+    <link rel="stylesheet" type="text/css" href="css/addit.css?ver=20240216">
+
+    <script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
+
+    <!-- izmodal-->
+    <script src="lib/izimodal/1.6.1/iziModal.js"></script>
+    <link href="lib/izimodal/1.6.1/iziModal.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/icomoon.css">
+
+    <script src="js/lang.js"></script>
+    <script src="js/util.js"></script>
+    <script src="js/const.js"></script>
+    <script src="js/common.js"></script>
+    <script src="js/ck_event.js"></script>
+    <script src="js/draw_event.js"></script>
+    <script src="js/api.js"></script>
+    <script src="js/api_call.js"></script>
+    <script src="js/classinfo.js"></script>
+
+
+    <!-- <script src="https://kit.fontawesome.com/4834298440.js" crossorigin="anonymous"></script> -->
+		
+</head>
+<body id="edu">
+	<div id="wrap">
+		<div class="header" id="div_header">
+		</div>
+
+		<div class="center">		
+			<div class="contents">		
+				<div class="course-view">
+					<div class="main-area">
+						<div class="view ol">
+							<div class="course-info relative md:mt-10">
+                <div class="back-btn">
+                  <input type="button" value="뒤로가기" onclick="history.back();" class="before">
+                </div>
+								<img id="class_image" src="images/class/class_default.png"/>
+								<strong class="text-2xl mb-5" id="class_title">교육 과정명</strong>
+								<div class="mb-3">
+									<h5 class="font-bold text-black text-lg" id="class_cost_title">교육비</h5>
+									<p class="pl-2 text-base" id="class_cost_info">00원</p>
+								</div>
+								<div class="mt-2">
+									<h2 class="font-bold text-black text-lg" id="class_cost_method_title">1111</h2>
+									<div>
+										<p class="pl-2 text-base" id="class_cost_method_info">00원</dd>
+									</div>
+								</div>
+                <!-- 교육시간 설정-->
+                <div class="desc mt-3">
+                  <h2 class="font-bold text-black text-lg"  id="class_schedule_title">교육 일정</h2>
+                  <div class="desc pl-2 text-base" id="div_class_schedule">
+                  </div>
+                  <div class="desc pl-2 text-base" id="div_class_schedule_info">
+                  </div>
+                </div>
+								<div class="button">
+									<a href="#" id="btn_apply_education" class="text-center block md:inline btn-default-bg-color hover:opacity-75 text-white font-bold py-2 px-4 mt-2">교육신청</a>
+								</div>
+							</div>
+							<div class="row text-center mt-3">
+								<div class="block md:flex md:items-center md:gap-4 md:justify-center">
+                  <a href="" id="file_schedule" class="block bg-black hover:bg-opacity-75 text-white font-bold py-2 px-4 mt-2">교육시간표 다운로드</a>
+                  <a href="images/Business_Registration.pdf" download id="file_business"class="block bg-black hover:bg-opacity-75 text-white font-bold py-2 px-4 mt-2">사업자등록증/통장사본 다운로드</a>
+                </div>
+							</div>
+
+							<div class="course-detail">
+                <h2 class="font-bold" id="class_method_title">학습방법</h2>
+								<div class="text" id="class_method_info">
+								</div>
+								<h2 class="font-bold" id="class_content_title">과정안내</h2>
+								<div class="text" id="class_content_info">
+								</div>
+                <h2 class="font-bold" id="class_contact_title">문의처</h2>
+								<div class="text mb-10" id="class_contact_info">
+                </div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+  	<div class="footer www main" id="div_footer">
+		</div>
+	</div>
+
+  <!-- izModal 출력 : 팝업 -->
+  <div id="modal_popup_1" aria-hidden="true" role="dialog">
+    <div id="popup_content_1"></div>
+  </div>
+
+  <!-- izModal 출력 : 알람/경고 -->
+  <div id="modal_status" class="status-modal"> 
+  </div>
+  <script src="admin/assets/libs/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+	<script>
+    $(async function(){
+			g_lang = urlParams('lang');
+      g_class_idx = urlParams('class');
+      g_class_name = urlParams('className');
+      await load_class();
+
+      if (isEmpty(g_class_idx) || isEmpty(g_class_name) ){
+        gotoPage("index.html");
+      }
+
+      // pagelist에 정의된 페이지 템플릿 정보를 읽어온다.
+      await getPageList(PagesList);
+      $('#div_header').html(PagesContent.header);
+      $('#div_footer').html(PagesContent.footer);
+      
+      setLanguage("step2");
+
+      // 교육시간 정보 설정
+      await load_classtime();
+      setClassTime();
+
+    });
+
+  </script>	
+
+</body></html>

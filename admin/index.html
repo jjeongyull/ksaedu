@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <meta name="description" content="KS EDU 관리자">
+ 
+    
+    <!-- https://ogp.me/ 참고 -->
+    <!-- SNS에서 공유 시 기본적으로 웹에 설정해줘야하는 og 메타태그 : Naver 블로그, 카카오톡 미리보기 설정 -->
+    <meta property="og:title" content="KS EDU 관리자"> <!-- SNS에서 공유 시 보여주는 타이틀-->
+    <meta name="og:type" content="website">
+    <meta property="og:image" content=""> <!-- SNS에서 공유 시 보여주는 이미지 -->
+    <meta property="og:url" content=""> <!-- SNS에서 공유 시 보여주는 이미지-->
+    <meta property="og:description" content="KS EDU 관리자"> <!-- SNS에서 공유 시 보여주는 설명문구 -->
+    <meta property="og:locale" content="kr-KR"> <!-- SNS에서 공유 시 언어-지역, en-US 등 두개 이상 둘 수 있음 -->
+    <meta property="og:site-name" content="KS EDU 관리자">
+    <!-- 선택적 -->
+    <meta property="og:image:width" content="1066"> <!-- SNS에서 공유 시 보여주는 이미지 크기 -->
+    <meta property="og:image:height" content="558"> <!-- SNS에서 공유 시 보여주는 이미지 높이 -->
+
+    <link rel="apple-touch-icon" sizes="57x57" href="../favicon/apple-icon-57x57.png">
+    <link rel="apple-touch-icon" sizes="60x60" href="../favicon/apple-icon-60x60.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="../favicon/apple-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="../favicon/apple-icon-76x76.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="../favicon/apple-icon-114x114.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="../favicon/apple-icon-120x120.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="../favicon/apple-icon-144x144.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="../favicon/apple-icon-152x152.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="../favicon/apple-icon-180x180.png">
+    <link rel="icon" type="image/png" sizes="192x192"  href="../favicon/android-icon-192x192.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="../favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="96x96" href="../favicon/favicon-96x96.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="../favicon/favicon-16x16.png">
+    <link rel="manifest" href="../favicon/manifest.json">
+    <meta name="msapplication-TileColor" content="#ffffff">
+    <meta name="msapplication-TileImage" content="../favicon/ms-icon-144x144.png">
+    <meta name="theme-color" content="#ffffff">
+
+  <title>KS EDU 관리자</title>
+
+
+  <!-- JS -->
+  <script src="https://code.jquery.com/jquery-3.7.0.js"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+
+  <!-- SheetJS CDN -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.14.3/xlsx.full.min.js"></script>
+  <!-- FileSaver saveAs CDN -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/FileSaver.js/1.3.8/FileSaver.min.js"></script>
+
+  <!-- datatable -->
+  <script src="https://cdn.datatables.net/1.13.6/js/jquery.dataTables.js"></script>
+  <link href="https://cdn.datatables.net/1.13.6/css/jquery.dataTables.min.css" rel="stylesheet">
+  <script type="text/javascript" language="javascript" src="https://cdn.datatables.net/buttons/2.4.1/js/dataTables.buttons.min.js"></script>
+  <script type="text/javascript" language="javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.10.1/jszip.min.js"></script>
+  <script type="text/javascript" language="javascript" src="https://cdn.datatables.net/buttons/2.4.1/js/buttons.html5.min.js"></script>
+  <script type="text/javascript" language="javascript" src="https://cdn.datatables.net/buttons/2.4.1/js/buttons.print.min.js"></script>
+
+  <link rel="stylesheet" type="text/css" href="lib/DataTable/colResize/resources/syntax/shCore.css">
+  <script type="text/javascript" language="javascript" src="lib/DataTable/colResize/js/dataTables.colResize.js"></script>
+  <script type="text/javascript" language="javascript" src="lib/DataTable/colResize/resources/syntax/shCore.js"></script>
+
+  <script type="text/javascript" language="javascript" src="lib/DataTable/colResize/js/dataTables.colVis.js"></script>
+  <link rel="stylesheet" type="text/css" href="lib/DataTable/colResize/css/dataTables.colVis.css">
+  <link rel="stylesheet" type="text/css" href="lib/DataTable/Buttons-2.4.1/buttons.dataTables.css">
+
+  <!-- 체크박스 관련 -->
+  <link type="text/css" href="//gyrocode.github.io/jquery-datatables-checkboxes/1.2.12/css/dataTables.checkboxes.css" rel="stylesheet" />
+  <script type="text/javascript" src="//gyrocode.github.io/jquery-datatables-checkboxes/1.2.12/js/dataTables.checkboxes.min.js"></script>
+
+  <!-- datepicker -->
+  <link rel="stylesheet" href="//code.jquery.com/ui/1.13.2/themes/base/jquery-ui.css">
+  <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.js"></script>
+
+
+  <!-- Libs CSS -->
+  <link href="assets/libs/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
+  <link href="assets/libs/dropzone/dist/dropzone.css"  rel="stylesheet">
+  <link href="assets/libs/@mdi/font/css/materialdesignicons.min.css" rel="stylesheet" />
+  <link href="assets/libs/prismjs/themes/prism-okaidia.min.css" rel="stylesheet">
+  <link href="assets/css/custom.css" rel="stylesheet">
+  <!-- 수정 테마 : 버튼 -->
+  <link rel="stylesheet" href="./assets/css/button.css">
+  <link rel="stylesheet" href="assets/css/admin.css">
+
+  
+  <!-- Theme CSS -->
+  <link rel="stylesheet" href="./assets/css/theme.css">
+
+  <!-- tailwind -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <link rel="stylesheet" href="../css/addit.css">
+
+  <!-- iziModal Libaray : https://cdnjs.com/libraries/izimodal-->
+  <script src="../lib/izimodal/1.6.1/iziModal.js"></script>
+  <link href="../lib/izimodal/1.6.1/iziModal.css" rel="stylesheet">
+  <link rel="stylesheet" href="../css/icomoon.css">
+
+  <!-- js -->
+  <script src="../js/util.js"></script>
+  <script src="../js/lang.js"></script>
+  <script src="../js/common.js"></script>
+  <script src="../js/const.js"></script>
+  <script src="../js/api.js"></script>
+  <script src="../js/api_call.js"></script>
+  <script src="../js/ck_event.js"></script>
+  <script src="../js/draw_event.js"></script>
+
+
+</head>
+<body>
+  <div class="status-modal" id="modal-alert2"></div>
+
+  <div class="w-full relative" id="login_div"></div>
+
+  <div class="db-wrapper" id="db_wrapper" ></div>
+
+  <!--  offcanvas-start,  offcanvas-top, offcanvas-end, offcanvas-bottom-->
+  <div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvas" aria-labelledby="offcanvasLabel">
+    <div class="offcanvas-header">
+      <h5 class="offcanvas-title text-lg md:text-xl" id="canvas_title"></h5>
+      <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+    </div>
+    <div class="offcanvas-body" id="canvas_body">
+      
+    </div>
+  </div>
+  <!-- izModal 출력 : 팝업 -->
+  <div id="modal_popup_1" aria-hidden="true" role="dialog">
+    <div id="popup_content_1"></div>
+  </div>
+
+  <!-- izModal 출력 : 알람/경고 -->
+  <div id="modal_status" class="status-modal"> 
+  </div>
+
+  <script>
+    $(async function(){
+      await getPageList(AdminList);    
+      if (isEmpty(g_access_token)){
+        login_token("../server/api_main.php");
+      }
+    });
+
+    $(document).on('click', "#nav_toggle", function(e){
+      e.preventDefault(),
+      $("#db_wrapper").toggleClass("toggled")
+    });
+  </script>
+
+  <!-- Libs JS -->
+  <script src="assets/libs/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="assets/libs/jquery-slimscroll/jquery.slimscroll.min.js"></script>
+  <script src="assets/libs/feather-icons/dist/feather.min.js"></script>
+  <script src="assets/libs/prismjs/prism.js"></script>
+  <script src="assets/libs/apexcharts/dist/apexcharts.min.js"></script>
+  <script src="assets/libs/dropzone/dist/min/dropzone.min.js"></script>
+  <script src="assets/libs/prismjs/plugins/toolbar/prism-toolbar.min.js"></script>
+  <script src="assets/libs/prismjs/plugins/copy-to-clipboard/prism-copy-to-clipboard.min.js"></script>
+</body>
+</html>

@@ -1,0 +1,199 @@
+<div class="w-full px-10 py-5 bg-white rounded-xl shadow center-align">
+  <input type="hidden" id="idx">
+
+  <div class="w-full grid grid-cols-3 border-bottom-1 bg-gray-100">
+    <div class="w-full items-center px-2 py-1 border-right-1">
+      <p class="font-bold text-black text-sm">신청국가</p>
+      <p class="break-all text-sm" type="text" id="subs_country">-</p>
+    </div>
+    <div class="w-full items-center px-2 py-1 border-right-1">
+      <p class="font-bold text-black text-sm">교육날짜</p>
+      <p class="break-all text-sm" type="text" id="subs_class_time_idx">-</p>
+    </div>
+    <div class="w-full items-center px-2 py-1">
+      <p class="font-bold text-black text-sm">교육 신청일</p>
+      <p class="break-all text-sm" type="text" id="subs_date">-</p>
+    </div>
+  </div>
+
+  <div class="w-full grid grid-cols-3 border-bottom-1 bg-gray-100">
+    <div class="w-full items-center px-2 py-1 border-right-1">
+      <p class="font-bold text-black text-sm">교육생명(중문)</p>
+      <p class="break-all text-sm" type="text" id="subs_user_name_ch">-</p>
+    </div>
+    <div class="w-full items-center px-2 py-1 border-right-1">
+      <p class="font-bold text-black text-sm">교육생명(영문)</p>
+      <p class="break-all text-sm" type="text" id="subs_user_name_en">-</p>
+    </div>
+    <div class="w-full items-center px-2 py-1">
+      <p class="font-bold text-black text-sm">신청자 위쳇</p>
+      <p class="break-all text-sm" type="text" id="subs_user_wechat">-</p>
+    </div>
+  </div>
+
+  <div class="w-full grid grid-cols-3 border-bottom-1 bg-gray-100">
+    <div class="w-full items-center px-2 py-1 border-right-1">
+      <p class="font-bold text-black text-sm">생년월일</p>
+      <p class="break-all text-sm" type="text" id="subs_birth">-</p>
+    </div>
+    <div class="w-full items-center px-2 py-1 border-right-1">
+      <p class="font-bold text-black text-sm">성별</p>
+      <p class="break-all text-sm" type="text" id="subs_sex">-</p>
+    </div>
+    <div class="w-full items-center px-2 py-1">
+      <p class="font-bold text-black text-sm">직위</p>
+      <p class="break-all text-sm" type="text" id="subs_company_position">-</p>
+    </div>
+  </div>
+
+  <div class="w-full grid grid-cols-3 border-bottom-1 bg-gray-100">
+    <div class="w-full items-center px-2 py-1 border-right-1">
+      <p class="font-bold text-black text-sm">신분번호</p>
+      <p class="break-all text-sm" type="text" id="subs_identity_number">-</p>
+    </div>
+    <div class="w-full items-center px-2 py-1 border-right-1">
+      <p class="font-bold text-black text-sm">연락처</p>
+      <p class="break-all text-sm" type="text" id="subs_phone_number">-</p>
+    </div>
+    <div class="w-full items-center px-2 py-1">
+      <p class="font-bold text-black text-sm">이메일</p>
+      <p class="break-all text-sm" type="text" id="subs_user_email">-</p>
+    </div>
+  </div>
+
+  <div class="w-full grid grid-cols-3 border-bottom-1 bg-gray-100">
+    <div class="w-full items-center px-2 py-1 border-right-1">
+      <p class="font-bold text-black text-sm">ZIPCODE</p>
+      <p class="break-all text-sm" type="text" id="subs_user_zipcode">-</p>
+    </div>
+    <div class="w-full items-center px-2 py-1 border-right-1">
+      <p class="font-bold text-black text-sm">업체명(중문)</p>
+      <p class="break-all text-sm" type="text" id="subs_company_name_ch">-</p>
+    </div>
+    <div class="w-full items-center px-2 py-1">
+      <p class="font-bold text-black text-sm">업체명(영문)</p>
+      <p class="break-all text-sm" type="text" id="subs_company_name_en">-</p>
+    </div>
+  </div>
+
+  <div class="w-full grid grid-cols-3 border-bottom-1 bg-gray-100">
+    <div class="w-full items-center px-2 py-1 border-right-1">
+      <p class="font-bold text-black text-sm">업체명(국문)</p>
+      <p class="break-all text-sm" type="text" id="subs_company_name_ko">-</p>
+    </div>
+    <div class="w-full items-center px-2 py-1 border-right-1">
+      <p class="font-bold text-black text-sm">송금통화</p>
+      <p class="break-all text-sm" type="text" id="subs_currency">-</p>
+    </div>
+    <div class="w-full items-center px-2 py-1">
+      <p class="font-bold text-black text-sm">입금자명</p>
+      <p class="break-all text-sm" type="text" id="subs_depositor_name">-</p>
+    </div>
+  </div>
+
+  <div class="w-full grid grid-cols-3 border-bottom-1 bg-gray-100">
+    <div class="w-full items-center px-2 py-1 border-right-1">
+      <p class="font-bold text-black text-sm">공장주소(중문)</p>
+      <p class="break-all text-sm" type="text" id="subs_company_address_ch">-</p>
+    </div>
+    <div class="w-full items-center px-2 py-1 border-right-1">
+      <p class="font-bold text-black text-sm">공장주소(영문)</p>
+      <p class="break-all text-sm" type="text" id="subs_company_address_en">-</p>
+    </div>
+    <div class="w-full items-center px-2 py-1">
+      <p class="font-bold text-black text-sm">대표자 영문명</p>
+      <p class="break-all text-sm" type="text" id="subs_ceo_name">-</p>
+    </div>
+  </div>
+
+  <div class="w-full grid grid-cols-3 border-bottom-1 bg-gray-100">
+    <div class="w-full items-center px-2 py-1 border-right-1">
+      <p class="font-bold text-black text-sm">에이전트</p>
+      <p class="break-all text-sm" type="text" id="subs_agent_name">-</p>
+    </div>
+    <div class="w-full items-center px-2 py-1 border-right-1">
+      <p class="font-bold text-black text-sm">에이전트 담당자</p>
+      <p class="break-all text-sm" type="text" id="subs_agent_manager">-</p>
+    </div>
+    <div class="w-full items-center px-2 py-1">
+      <p class="font-bold text-black text-sm">에이전트 위쳇</p>
+      <p class="break-all text-sm" type="text" id="subs_agent_wechat">-</p>
+    </div>
+  </div>
+
+  <div class="w-full grid grid-cols-2 border-bottom-1 bg-gray-100">
+    <div class="w-full items-center px-2 py-1 border-right-1">
+      <p class="font-bold text-black text-sm">에이전트 연락처</p>
+      <p class="break-all text-sm" type="text" id="subs_agent_phone_number"></p>
+    </div>
+    <div class="w-full items-center px-2 py-1">
+      <p class="font-bold text-black text-sm">에이전트 이메일</p>
+      <p class="break-all text-sm" type="text" id="subs_agent_email"></p>
+    </div>
+  </div>
+
+  <div class="w-full grid grid-cols-3 border-bottom-1 bg-gray-100">
+    <div class="w-full items-center px-2 py-1 border-right-1">
+      <label class="font-bold text-black text-sm" for="subs_deposit_date">입금일자</label>
+      <input class="form-control p-1" type="text" id="subs_deposit_date" placeholder="입금일자를 입력하세요." readonly>
+    </div>
+    <div class="w-full items-center px-2 py-1 border-right-1">
+      <label class="font-bold text-black text-sm" for="subs_remittance_amount">송금액</label>
+      <input class="form-control p-1" type="text" id="subs_remittance_amount" placeholder="송금액을 입력하세요.">
+    </div>
+    <div class="w-full items-center px-2 py-1">
+      <label class="font-bold text-black text-sm" for="subs_take">매출액</label>
+      <input class="form-control p-1" type="text" id="subs_take" placeholder="매출액을 입력하세요.">
+    </div>
+  </div>
+
+  <div class="w-full grid grid-cols-3 border-bottom-1 bg-gray-100">
+    <div class="w-full items-center px-2 py-1 border-right-1">
+      <label class="font-bold text-black text-sm" for="subs_slip_number">선수 전표번호</label>
+      <input class="form-control p-1" type="text" id="subs_slip_number" placeholder="선수 전표번호를 입력하세요.">
+    </div>
+    <div class="w-full items-center px-2 py-1 border-right-1">
+      <label class="font-bold text-black text-sm" for="subs_bill">계산서구분</label>
+      <input class="form-control p-1" type="text" id="subs_bill" placeholder="계산서구분을 입력하세요.">
+    </div>
+    <div class="w-full items-center px-2 py-1">
+      <label class="font-bold text-black text-sm" for="subs_sales_slip">매출전표</label>
+      <input class="form-control p-1" type="text" id="subs_sales_slip" placeholder="매출전표를 입력하세요.">
+    </div>
+  </div>
+
+  <div class="w-full grid grid-cols-2 border-bottom-1 bg-gray-100 mb-2">
+    <div class="w-full items-center px-2 py-1 border-right-1">
+      <label class="font-bold text-black text-sm" for="subs_briefs">적요</label>
+      <input class="form-control p-1" type="text" id="subs_briefs" placeholder="적요를 입력하세요.">
+    </div>
+    <div class="w-full items-center px-2 py-1">
+      <div class="font-bold text-black text-sm" id="label_chk_currency">신청상태</div>
+      <div class="w-full md:w-5/6 flex gap-3">    
+        <label class="form-check-label text-sm" for="chk_state_1">
+          <input id="chk_state_1" type="radio" name="chk_state" class="form-check-input" value="0">  
+          정상
+        </label>
+        <label class="form-check-label  text-sm" for="chk_state_2">
+          <input id="chk_state_2" type="radio" name="chk_state" class="form-check-input" value="1">  
+          대기
+        </label>
+      </div>  
+    </div>
+  </div>
+
+  <div class="flex justify-end">
+    <button class="basic-btn-2 btn-default-bg-color text-white py-1 text-sm px-3" id="btn_subs_success">처리</button>
+    <button class="basic-btn-2 bg-red-400 text-white py-1 px-3 text-sm ml-2" id="btn_subs_delete">삭제</button>
+    <button class="basic-btn-2 bg-red-400 text-white py-1 px-3 text-sm ml-2" id="btn_close_pop">닫기</button>
+    
+  </div>
+  
+</div>
+
+<script>
+  $('#subs_remittance_amount').onlyNumber();
+  $('#subs_remittance_amount').numberWithCommasFn();
+  $('#subs_take').onlyNumber();
+  $('#subs_take').numberWithCommasFn();
+</script>

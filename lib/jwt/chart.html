@@ -1,0 +1,98 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>chartjs-plugin-labels</title>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-datalabels@2"></script> 
+  <script src="html2canvas.min.js"></script> 
+
+</head>
+<body>
+    <div id="png_div">
+      <div class="chart-wrapper" style="width:800px; height:800px;">
+        <canvas id="pie-canvas1"></canvas>
+      </div>
+    </div>
+    <button id="saveButton">저장하기</button>
+    <script>
+      const data = {
+        labels: [
+          'Red',
+          'Blue',
+          'Yellow'
+        ],
+        datasets: [{
+          label: 'My First Dataset',
+          data: [300, 50, 100],
+          backgroundColor: [
+            'rgb(255, 99, 132)',
+            'rgb(54, 162, 235)',
+            'rgb(255, 205, 86)'
+          ],
+          hoverOffset: 4
+        }]
+      };
+      const config = {
+        type: 'doughnut',
+        data: data,
+      };
+      const myChart = new Chart($('#pie-canvas1'), {
+        type: 'pie',
+        data : data,
+        plugins: [ChartDataLabels],
+        options:{
+          plugins:{
+            tooltip :{
+              enabled : false
+            },
+            datalabels: {
+              formatter: function(value, context) {
+                var tmpsum = 0;
+                var tmpArray = context.dataset.data;
+                for (var i =0; i<tmpArray.length; i++)
+                {
+                  tmpsum = tmpsum + parseInt(tmpArray[i]);
+                }
+                return context.chart.data.labels[context.dataIndex] + ':' + value + '(' + Math.round((value/tmpsum)*100) + '%)';
+              },
+              clamp : true,
+              anchor : 'end',
+              offset : 4,
+              align: 'end', 
+              //color: '#000000',
+              labels:{
+                title : {
+                  font :{
+                    size: 10,
+                    weight: 'bold'
+                  }
+                }
+              }
+            }
+          }
+        }
+      });
+
+    function downloadURI(uri, name){
+      var link = document.createElement("a")
+      link.download = name;
+      link.href = uri;
+      document.body.appendChild(link);
+      link.click();
+    }
+
+    $(document).on('click', "#saveButton", function(){
+      //이미지(png)로 다운로드
+	    html2canvas(document.querySelector('#png_div')).then(canvas => {
+		    var myImage = canvas.toDataURL();
+		    downloadURI(myImage, "저장이미지이름.png");
+      });
+
+	  });
+
+
+    </script>
+</body>
+</html>

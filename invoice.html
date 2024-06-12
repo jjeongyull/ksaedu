@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>KSA EDU - Invoice</title>
+
+  <script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
+  <link href="https://cdn.jsdelivr.net/npm/reset-css@5.0.2/reset.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="css/invoice.css">
+
+  <link rel="apple-touch-icon" sizes="57x57" href="favicon/apple-icon-57x57.png">
+  <link rel="apple-touch-icon" sizes="60x60" href="favicon/apple-icon-60x60.png">
+  <link rel="apple-touch-icon" sizes="72x72" href="favicon/apple-icon-72x72.png">
+  <link rel="apple-touch-icon" sizes="76x76" href="favicon/apple-icon-76x76.png">
+  <link rel="apple-touch-icon" sizes="114x114" href="favicon/apple-icon-114x114.png">
+  <link rel="apple-touch-icon" sizes="120x120" href="favicon/apple-icon-120x120.png">
+  <link rel="apple-touch-icon" sizes="144x144" href="favicon/apple-icon-144x144.png">
+  <link rel="apple-touch-icon" sizes="152x152" href="favicon/apple-icon-152x152.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="favicon/apple-icon-180x180.png">
+  <link rel="icon" type="image/png" sizes="192x192"  href="favicon/android-icon-192x192.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="favicon/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="96x96" href="favicon/favicon-96x96.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="favicon/favicon-16x16.png">
+  <link rel="manifest" href="favicon/manifest.json">
+  <meta name="msapplication-TileColor" content="#ffffff">
+  <meta name="msapplication-TileImage" content="favicon/ms-icon-144x144.png">
+  <meta name="theme-color" content="#ffffff">
+
+  <script src="js/lang.js"></script>
+  <script src="js/util.js"></script>
+  <script src="js/draw_event.js"></script>
+  <script src="js/ck_event.js"></script>
+</head>
+<body>
+  <div class="btn-div" id="in_btn_div">
+    <button class="btn-default-bg-color in-btn" id="invoice_print">Print</button>
+  </div>
+  <div class="in-width" id="invoice_div">
+    <div class="in-inner">
+      <!-- 인보이스 날짜 -->
+      <p id="print_time" class="p-time">February 15, 2023</p>
+      <h1 class="in-title">INVOICE</h1>
+      <p class="mb-30">Dear Sir/Madam</p>
+      <p class="mb-20">With regard to the education on <span id="class_time">March 07–09 2023</span>, here by we would like to ask for the education fee for 1 person as below.</p>
+
+      <!-- table -->
+      <table class="mb-30">
+        <tr>
+          <td class="td-1" colspan="3"><span class="f-bold">Company Name:</span> <span id="company_name">aaaa</span></td>
+        </tr>
+        <tr>
+          <td class="td-2 f-bold">Participant Name</td>
+          <td class="td-2 f-bold">Education Fee(<span id="currency"></span>)</td>
+          <td class="td-2 r-none f-bold">Remarks</td>
+        </tr>
+        <tr>
+          <td class="td-2" id="name_en"></td>
+          <td class="td-2" id="fee_en"></td>
+          <td class="td-2 r-none"></td>
+        </tr>
+        <tr>
+          <td class="td-3 f-bold" id="tatal"></td>
+          <td class="td-3" id="fee_ch"></td>
+          <td class="td-3 r-none"></td>
+        </tr>
+      </table>
+
+      <ul class="mb-60">
+        <li class="mb-10">- Name of Bank : Industrial Bank of Korea</li>
+        <li class="mb-10" id="num">- Account Number : 449-008125-04-016</li>
+        <li class="mb-10">- Beneficiary Name : Korean Standards Association</li>
+        <li class="mb-10">- Beneficiary Address : 5, Teheran-ro 69-gil, Gangnam-gu, Seoul, Korea(06160)</li>
+        <li class="mb-10">- Swift Code : IBKOKRSE</li>
+      </ul>
+
+      <p class="f-bold mb-60">Applicant(the sender) have to pay all remittance charges.</p>
+
+      <p class="info-p mb-30">If you have any questions, please contact <span class="f-bold" id="manager_name">Sukyeong Jo</span>, Standard Education Team,<br>
+        KSA (Tel: <span id="tel">82-2-6240-4623</span>, Fax: <span id="fax">82-2-6919-4021</span>).</p>
+
+      <p class="mb-30">Sincerely Yours</p>
+
+      <img src="assets/images/main_sign.png" style="width: 300px;" alt="서명">
+      <p class="s-p f-bold mb-30">Kang Myungsoo</p>
+      <p class="f-bold">Chairman and CEO</p>
+      <div class="flex-div">
+        <p class="p-big">KOREAN STANDARDS ASSOCIATION</p>
+        <img class="ab-img" src="assets/images/dojang.png" alt="직인">
+      </div>
+    </div>
+  </div>
+
+
+  <script>
+    let data = urlParams('data');
+    draw_invoice(data);
+  </script>
+</body>
+</html>

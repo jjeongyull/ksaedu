@@ -1,0 +1,334 @@
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Authorization using JWTs and PHP</title>
+
+  <script type="text/javascript" src="https://code.jquery.com/jquery-3.6.3.min.js"></script>
+
+  <!-- 합쳐지고 최소화된 최신 CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script>
+  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/4.0.0/crypto-js.min.js"></script>
+
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+  <link href="https://cdn.jsdelivr.net/npm/sweetalert2@11.7.3/dist/sweetalert2.min.css" rel="stylesheet">
+  <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/limonte-sweetalert2/7.2.0/sweetalert2.min.css"> -->
+  <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/limonte-sweetalert2/7.2.0/sweetalert2.all.min.js"></script> -->
+
+
+  <script src="crypt.js"></script>
+  <script src="ck_event.js"></script>
+  <script src="util.js"></script>
+  <script src="ajax_api.js"></script>
+
+</head>
+
+<body class="text-center">
+
+<!--
+      <h1 class="h3 mb-3 fw-normal">Log In</h1>
+
+      <label for="inputEmail" class="visually-hidden">Email address</label>
+      <input type="text" id="inputEmail" value="admin" class="form-control" placeholder="Email address or username" required
+        autofocus>
+
+      <label for="inputPassword" class="visually-hidden">Password</label>
+      <input type="password" id="inputPassword" value="!doemdlt2022#"  class="form-control" placeholder="Password" required>
+<!--
+      <div class="checkbox mb-3">
+        <label>
+          <input type="checkbox" value="remember-me"> Remember me
+        </label>
+      </div>
+-->
+  <div class="container">
+      <h1 class="h3 mb-3 fw-normal">Log In</h1>
+        <label for="inputEmail" class="visually-hidden">Email address</label>
+        <input type="text" id="inputEmail" value="admin" placeholder="Email address or username" required autofocus aria-describedby="email_tip">
+        <p id="email_tip" rol="tooltip">이메일을 입력하세요.</p>
+        <label for="inputPassword" class="visually-hidden">Password</label>
+        <input type="password" id="inputPassword" value="!doemdlt2022#" placeholder="Password" required>
+        <button class="btn btn-primary" id="btnLogin">Sign in</button>
+  </div>      
+  <div class="container text-center">
+    <div class="row cols-2">
+      <div class="col text-cneter">
+        <label>클라이언트</label>
+        <div class="row clos-2">
+          <div class="col" style="border:1px solid red;">
+            <textarea id="textarea_client" rows=10 class="w-100"></textarea>
+          </div>
+          <div class="col" style="border:1px solid red;">
+            <label id="client_data" class="w-100 text-start" style="border:1px solid blue; max-width:100%; word-break:break-all">클라이어트 데이터</label>
+          </div>
+        </div>
+      </div>
+      <div class="col text-cneter">
+        <label>서버</label>
+        <div class="row clos-2" >
+          <div class="col" style="border:1px solid red;">
+            <textarea id="textarea_server" rows=10 class="w-100"></textarea>
+          </div>
+          <div class="col" style="border:1px solid red;">
+            <label id="server_data" class="w-100 text-start" style="border:1px solid blue; max-width:100%; word-break:break-all">서버 데이터</label>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <br><br>
+  <div class="container">
+
+
+    <!-- 부트스트랩 : 백그라운드 클릭 불가 모달 -->
+    <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="staticBackdropLabel">Modal title</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+            ...
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-primary" data-bs-dismiss="modal">닫기</button>
+            <!-- <button type="button" class="btn btn-primary">Understood</button> -->
+          </div>
+        </div>
+      </div>
+    </div>
+      
+      <button class="btn btn-primary" id="btnEncrypt">클라이언트암호화</button>
+      <button class="btn btn-primary" id="btnDecrypt">클라이언트복호화</button>
+
+      <button class="btn btn-primary" id="btnServerEncrypt">서버암호화(클라이언트복호화)</button>
+      <button class="btn btn-primary" id="btnServerDecrypt">서버복호화(클라이언트암호화)</button>
+
+      <button class="btn btn-primary" type="button" data-bs-toggle="modal" data-bs-target="#staticBackdrop" id="btnSetCookie">쿠키전송</button>
+
+
+      <button class="btn btn-primary" id="btnAlert">알람창</button>
+
+
+      <p class="mt-5 mb-3 text-muted">&copy; 주식회사 애드아이티</p>
+
+      <div id="div_access_token"  style="word-break: break-all;">
+      </div>
+      <div id="div_refesh_token"  style="word-break: break-all;"></div>
+
+      <div id="div_current_status"  style="word-break: break-all;"></div>
+
+      <div id="div_desc1"  style="word-break: break-all;"></div>
+      <div id="div_desc11"  style="word-break: break-all;"></div>
+      <div id="div_desc2"  style="word-break: break-all;"></div>
+      <div id="div_desc22"  style="word-break: break-all;"></div>
+
+
+
+    <button id="btnGetResource">Get Current Timestamp</button>
+    <button id="btnLogout">로그아웃</button>
+  </div>
+  
+  <script>
+  
+    $(function(){
+      $('#btnLogout').css('display', 'none');
+      $('#btnGetResource').css('display', 'none');
+      if (isEmpty(g_access_token))
+      {
+        g_access_token = genJWTToken();
+      }
+    });
+
+
+
+    // 알림창 구현
+    // https://sweetalert2.github.io/#declarative-templates
+    $(document).on("click", "#btnAlert", function(){
+      Swal.fire(
+          'The Internet?',
+          'That thing is still around?',
+          'question'
+        )
+      return;
+
+      var dlgjson = {
+        title: '오류!',
+        text: 'Do you want to continue',
+        icon: 'warning',
+        width: 300,
+        showCancelButton: true,
+        allowOutsideClick: false,
+        confirmButtonText: 'Yes, delete it!',
+        cancelButtonText: 'No, cancel!',
+        footer: '<a href="">Why do I have this issue?</a>'
+      };
+
+      var inputdlg = {
+        title: 'Submit your Github username',
+        input: 'text',
+        inputAttributes: {
+          autocapitalize: 'off'
+        },
+        showCancelButton: true,
+        confirmButtonText: 'Look up',
+        showLoaderOnConfirm: true,  
+      };
+
+      const inputOptions = new Promise((resolve) => {
+        setTimeout(() => {
+          resolve({
+            '#ff0000': 'Red',
+            '#00ff00': 'Green',
+            '#0000ff': 'Blue'
+          })
+        }, 1000)
+      })
+
+      // async await 관련 : https://victorydntmd.tistory.com/87
+      const selectedcolor = async () => {
+        const { value: color } = await Swal.fire({
+          title: 'Select color',
+          input: 'radio',
+          allowOutsideClick: false,
+          inputOptions: inputOptions,
+          inputValidator: (value) => {
+            if (!value) {
+              return 'You need to choose something!'
+            }
+          }
+        })
+        if (color) {
+          Swal.fire({ html: `You selected: ${color}` })
+        }
+      }
+
+      selectedcolor();
+
+      /*
+      var swal = Swal.fire({
+          title: 'Submit your Github username',
+          input: 'text',
+          inputAttributes: {
+            autocapitalize: 'off'
+          },
+          showCancelButton: true,
+          confirmButtonText: 'Look up',
+          showLoaderOnConfirm: true,
+          preConfirm: (login) => {
+            return fetch(`//api.github.com/users/${login}`)
+              .then(response => {
+                if (!response.ok) {
+                  throw new Error(response.statusText)
+                }
+                return response.json()
+              })
+              .catch(error => {
+                Swal.showValidationMessage(
+                  `Request failed: ${error}`
+                )
+              })
+          },
+          allowOutsideClick: () => !Swal.isLoading()
+        })
+        .then((result) => {
+          if (result.isConfirmed) {
+            /*Swal.fire(
+              'Deleted!',
+              'Your file has been deleted.',
+              'success'
+            )*/
+            /*
+            Swal.showValidationMessage(
+                `Request failed: aaaa`
+              )
+          } else if (
+            /* Read more about handling dismissals below */
+          /*
+            result.dismiss === Swal.DismissReason.cancel
+          ) {
+            Swal.fire(
+              'Cancelled',
+              'Your imaginary file is safe :)',
+              'error'
+            )
+          }
+        });
+        $('.swal2-popup .swal2-title').css('font-size', 14);
+        */
+    });
+
+    // 쿠키 전송
+    $(document).on("click", "#btnSetCookie", function(){
+
+        //$('#btnSetCookie').data('bs-target', '#staticBackdrop');
+        toggle_org_text = $(this).text();
+        setCookie("testCookie", "test", 1);
+        showLoadingButton(true, '#btnSetCookie');
+        var headers = Object();
+        headers['Authorization'] = "Bearer " + "aaaaaaaaa";
+
+        // 쿠키를 전송한다.
+        var param = {};
+        param.cmd = "aaa";
+        xhr_palin('api.php', param, headers, "text", false, "POST")
+          .done(function(data, textStatus, xhr) {
+            display_modal('done', data, errorThrown);
+          })  // done에서 처리된 데이터 처리
+          .then(function(data, textStatus, errorThrown) {
+            display_modal('then', textStatus, errorThrown);
+          });
+    });
+
+
+
+    $(document).on("click", "#btnEncoding", function(){
+      var szTemp = $('#inputEmail').val();
+      $('#div_refesh_token').text(rawurlencode(szTemp));
+    });
+
+    $(document).on("click", "#btnDecoding", function(){
+      var szTemp = $('#div_refesh_token').text();
+      $('#div_current_status').text(rawurldecode(szTemp));
+    });
+
+    // 암호화
+    $(document).on("click", "#btnEncrypt", function(){
+      var data = {};
+      data.id = "아이디";
+      var tmp = $('#textarea_client').val();
+      data.passwd = tmp;
+
+      var param = {};
+      param.cmd = "test";
+      param.data = rawurlencode(JSON.stringify(data));
+      
+      var szTemp = JSON.stringify(param);
+      //$('#client_data').text(rawurlencode(encodeByAES256(szTemp)));
+      $('#client_data').text(encodeByAES256(szTemp));
+    });
+
+    // 복호화
+    $(document).on("click", "#btnDecrypt", function(){
+      //var szTemp = $('#client_data').text();
+      var szTemp = $('#client_data').text();
+      szTemp = decodeByAES256(szTemp);
+      var tmpJSON = JSON.parse(szTemp);
+      var tmpData = rawurldecode(tmpJSON["data"]);
+      //tmpData = tmpData.replaceAll('\\', '');
+      tmpJSON["data"] = tmpData;
+
+      var tmpJSON2 = JSON.parse(tmpData);
+      //$('#textarea_client').val(JSON.stringify(szTemp));
+    });
+
+
+
+  </script>
+</body>
+
+</html>
